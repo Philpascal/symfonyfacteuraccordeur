@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Base Facteur Accordeur</title>
+
+    {# <link rel="stylesheet" href="./css/style.css"> #}
+    <link href="{{ asset('facteuraccordeur/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('clean/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boogaloo&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body>
+
+    <header class="top_bar">
+
+        <a href="#"><img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#"></a>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+        {% endfor %}
+
+        {% if not is_granted("ROLE_USER") %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+            </li>
+        {% endif %}
+
+        <div class="titretopbar">
+           <h1>Facteur<br>Accordeur</h1> 
+            <img class="logo" src="{{ asset('facteuraccordeur/images/logo.png') }}" alt="#">
+        </div>
+
+    </header>
+
+
+        {% block body %}{% endblock %}
+
+
+    <footer class="footer">
+        
+        <a href="#"><img class="arobase" src="{{ asset('facteuraccordeur/images/arobase.png') }}" alt="#"></a>
+        <a href="#"><img class="localisation" src="{{ asset('facteuraccordeur/images/localisation.jpg') }}" alt="#"></a>
+        <a href="#"><img class="telephone" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#"></a>
+        <a href="#"><img class="facebook" src="{{ asset('facteuraccordeur/images/facebook.jpg') }}" alt="#"></a>
+        <a href="#"><img class="mention_legale" src="{{ asset('facteuraccordeur/images/mention_legale.jpg') }}" alt="#"></a>
+        
+    </footer>
+    
+</body>
+</html>
