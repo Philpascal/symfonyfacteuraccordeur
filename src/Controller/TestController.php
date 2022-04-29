@@ -12,7 +12,15 @@ class TestController extends AbstractController
     public function index(): Response
     {
         return $this->render('test/index.html.twig', [
-            'controller_name' => 'TestController',
+            //'controller_name' => 'TestController',
+        ]);
+    }
+
+    #[Route('/formulaire', name: 'app_formulaire')]
+    public function formulaire(): Response
+    {
+        return $this->render('test/formulaire.html.twig', [
+            // 'controller_name' => 'TestController',
         ]);
     }
 }

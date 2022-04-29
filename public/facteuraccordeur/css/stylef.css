@@ -58,7 +58,7 @@ table {
 
 
 body{
-	background-color: black;
+	/* background-color: black; */
 	font-family: 'Boogaloo', cursive;
 	color: #fff;
 }
@@ -337,6 +337,42 @@ footer{
 }
 
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -508,20 +544,7 @@ footer{
 	.piano{
 		grid-area: hautc;
 	}
-
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
 	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
 	.localisation{
 		width: 38px;
 		border-radius: 50%;
@@ -673,19 +696,6 @@ footer{
 	
 	.piano{
 		grid-area: hautc;
-	}
-
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
 	}
 
 	.localisation{
@@ -948,20 +958,7 @@ footer{
 		border-radius: 12px;
 		width: 75%;
 	}
-	
-	.footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
+		
 	.localisation{
 		width: 38px;
 		border-radius: 50%;
