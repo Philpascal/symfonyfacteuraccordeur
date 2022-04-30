@@ -26,7 +26,7 @@
 
     <header class="top_bar">
 
-        <a href="#"><img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#"></a>
+        <a href="{{ path('home') }}"><img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#"></a>
 
         {% for message in app.flashes('success') %}
             <div class="alert alert-success" role="alert">{{ message }}</div>
@@ -34,7 +34,7 @@
 
         {% if not is_granted("ROLE_USER") %}
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+                <a class="nav-link" href="{{ path('app_register') }}">Register</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('app_login') }}">Login</a>
@@ -61,9 +61,9 @@
 
     <footer class="footer">
         
-        <a href="#"><img class="arobase" src="{{ asset('facteuraccordeur/images/arobase.png') }}" alt="#"></a>
+        <a href="{{ path('app_formulaire') }}"><img class="arobase" src="{{ asset('facteuraccordeur/images/arobase.png') }}" alt="#"></a>
         <a href="#"><img class="localisation" src="{{ asset('facteuraccordeur/images/localisation.jpg') }}" alt="#"></a>
-        <a href="#"><img class="telephone" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#"></a>
+        <a href="{{ path('app_formulaire') }}"><img class="telephone" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#"></a>
         <a href="#"><img class="facebook" src="{{ asset('facteuraccordeur/images/facebook.jpg') }}" alt="#"></a>
         <a href="#"><img class="mention_legale" src="{{ asset('facteuraccordeur/images/mention_legale.jpg') }}" alt="#"></a>
         
