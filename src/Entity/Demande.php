@@ -49,6 +49,13 @@ class Demande
     #[ORM\Column(type: 'string', length: 200, nullable: true)]
     private $photo_d;
 
+
+
+
+    
+     #[ORM\Column(type: 'string', length: 255)]
+    private $slug;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -194,6 +201,18 @@ class Demande
     public function setPhotoD(?string $photo_d): self
     {
         $this->photo_d = $photo_d;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

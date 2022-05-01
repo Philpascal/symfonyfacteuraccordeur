@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe,
+/* html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -17,9 +17,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
+} */
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/* article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -96,7 +96,7 @@ body{
 .titretopbar h1{
 	font-family: 'Boogaloo', cursive;
 	color: #fff;
-	/*font-size: 1.1rem;*/
+	font-size: 1.1rem;
 	margin-right: 5vw;
 	margin-bottom: 2px;
 }
@@ -337,41 +337,6 @@ footer{
 }
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -411,6 +376,12 @@ footer{
 
 
 	
+
+
+
+
+
+
 
 
 
@@ -543,7 +514,20 @@ footer{
 	.piano{
 		grid-area: hautc;
 	}
+
+	footer{
+		padding: 10px 0;
+	}
+
+	.arobase{
+		width: 38px;
+	}
 	
+	.arobase:hover{
+		border-radius: 20%;
+		background-color: #fff;
+	}
+
 	.localisation{
 		width: 38px;
 		border-radius: 50%;
@@ -697,6 +681,19 @@ footer{
 		grid-area: hautc;
 	}
 
+	footer{
+		padding: 10px 0;
+	}
+
+	.arobase{
+		width: 38px;
+	}
+	
+	.arobase:hover{
+		border-radius: 20%;
+		background-color: #fff;
+	}
+
 	.localisation{
 		width: 38px;
 		border-radius: 50%;
@@ -817,9 +814,9 @@ footer{
 	}
 
 	.img_main_accordeur{
-		margin: 0px;
+		margin: 0px; */
 		/*margin-top: 0vw;*/
-	}
+	/* }
 
 	h2{
 		font-size: 20px;
@@ -957,7 +954,20 @@ footer{
 		border-radius: 12px;
 		width: 75%;
 	}
-		
+	
+	footer{
+		padding: 10px 0;
+	}
+
+	.arobase{
+		width: 38px;
+	}
+	
+	.arobase:hover{
+		border-radius: 20%;
+		background-color: #fff;
+	}
+
 	.localisation{
 		width: 38px;
 		border-radius: 50%;
@@ -991,8 +1001,7 @@ footer{
 	}
 	
 	.mention_legale:hover{
-
 		border-radius: 20%;
 	}
-}
+} */
 

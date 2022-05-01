@@ -96,7 +96,7 @@ body{
 .titretopbar h1{
 	font-family: 'Boogaloo', cursive;
 	color: #fff;
-	font-size: 1.1rem;
+	/*font-size: 1.1rem;*/
 	margin-right: 5vw;
 	margin-bottom: 2px;
 }
@@ -308,7 +308,6 @@ footer{
 
 .telephone{
 	width: 32px;
-
 	border-radius: 50%;
 }
 
@@ -318,7 +317,6 @@ footer{
 
 .facebook{
 	width: 32px;
-
 	border-radius: 50%;
 }
 
@@ -328,13 +326,45 @@ footer{
 
 .mention_legale{
 	width: 32px;
-
 	border-radius: 50%;
 }
 
 .mention_legale:hover{
 	border-radius: 20%;
 }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+.mainregister{
+	margin-left: 600px;
+	margin-top: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -376,12 +406,6 @@ footer{
 
 
 	
-
-
-
-
-
-
 
 
 
@@ -514,55 +538,6 @@ footer{
 	.piano{
 		grid-area: hautc;
 	}
-
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
-	.localisation{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.localisation:hover{
-		border-radius: 20%;
-	}
-	
-	.telephone{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.telephone:hover{
-		border-radius: 20%;
-	}
-
-	.facebook{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.facebook:hover{
-		border-radius: 20%;
-	}
-	
-	.mention_legale{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.mention_legale:hover{
-		border-radius: 20%;
-	}
 }
 
 
@@ -679,55 +654,6 @@ footer{
 	
 	.piano{
 		grid-area: hautc;
-	}
-
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
-	.localisation{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.localisation:hover{
-		border-radius: 20%;
-	}
-	
-	.telephone{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.telephone:hover{
-		border-radius: 20%;
-	}
-
-	.facebook{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.facebook:hover{
-		border-radius: 20%;
-	}
-	
-	.mention_legale{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.mention_legale:hover{
-		border-radius: 20%;
 	}
 }
 
@@ -888,11 +814,6 @@ footer{
 
 	.imgdiap{
 		margin-left: 10px;
-		padding-bottom: 6px;
-		padding-top: 30px;
-		padding-left: 10px;
-		border-radius: 12px;
-		width: 70%;
 	}
 
 	.figdiap{
@@ -903,22 +824,18 @@ footer{
 	}
 
 	.imgboit{
-		margin-left: 14px;
-		padding-right: 10px;
-		width: 70%;
-		padding-bottom: 6px;
-		border-radius: 12px;
-	}
+		margin-left: 8px;
+	} 
 
 	.figboit{
-		padding-bottom: 10px;
-		margin-top: 6px;
+		padding-bottom: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 4px;
 	}
 
 	.imgcle{
-		margin-left: 14px;
-		border-radius: 12px;
-		width: 70%;
+		margin-left: 5px;
 	}
 
 	.figcle{
@@ -935,73 +852,12 @@ footer{
 		width: 105%;
 	}
 
-	.imgpiad{
-		border-radius: 12px;
-		margin-top: 10px;
-        margin-bottom: 20px;
-		padding-top: 8px;
-	}
-
 	.figpiaq{
-        padding-top: 10px;
-		
+		padding: 10px;
 	}
 
 	.imgpiaq{
-        margin-bottom: 20px;
-        margin-top: 10px;
-        padding-right: 20px;
-		border-radius: 12px;
-		width: 75%;
-	}
-	
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
-	.localisation{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.localisation:hover{
-		border-radius: 20%;
-	}
-	
-	.telephone{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.telephone:hover{
-		border-radius: 20%;
-	}
-
-	.facebook{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.facebook:hover{
-		border-radius: 20%;
-	}
-	
-	.mention_legale{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.mention_legale:hover{
-		border-radius: 20%;
+		margin-right: 10px;
 	}
 }
 
