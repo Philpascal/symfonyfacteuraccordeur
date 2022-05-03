@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -28,6 +30,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Devis::class)]
+    private $devis;
+
+    #[ORM\ManyToOne(targetEntity: Devis::class, inversedBy: 'user_repondre')]
+    private $user_repondre;
+
+    public function __construct()
+    {
+        $this->devis = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -129,4 +142,47 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Devis>
+     */
+    public function getDevis(): Collection
+    {
+        return $this->devis;
+    }
+
+    public function addDevi(Devis $devi): self
+    {
+        if (!$this->devis->contains($devi)) {
+            $this->devis[] = $devi;
+            $devi->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDevi(Devis $devi): self
+    {
+        if ($this->devis->removeElement($devi)) {
+            // set the owning side to null (unless already changed)
+            if ($devi->getUser() === $this) {
+                $devi->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUserRepondre(): ?Devis
+    {
+        return $this->user_repondre;
+    }
+
+    public function setUserRepondre(?Devis $user_repondre): self
+    {
+        $this->user_repondre = $user_repondre;
+
+        return $this;
+    }
+
 }

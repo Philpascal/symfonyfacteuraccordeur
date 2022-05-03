@@ -2,32 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Demande;
+use App\Entity\Devis;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Demande>
+ * @extends ServiceEntityRepository<Devis>
  *
- * @method Demande|null find($id, $lockMode = null, $lockVersion = null)
- * @method Demande|null findOneBy(array $criteria, array $orderBy = null)
- * @method Demande[]    findAll()
- * @method Demande[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Devis|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Devis|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Devis[]    findAll()
+ * @method Devis[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class DemandeRepository extends ServiceEntityRepository
+class DevisRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Demande::class);
+        parent::__construct($registry, Devis::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Demande $entity, bool $flush = true): void
+    public function add(Devis $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -39,7 +39,7 @@ class DemandeRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Demande $entity, bool $flush = true): void
+    public function remove(Devis $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,7 +48,7 @@ class DemandeRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Demande[] Returns an array of Demande objects
+    //  * @return Devis[] Returns an array of Devis objects
     //  */
     /*
     public function findByExampleField($value)
@@ -65,7 +65,7 @@ class DemandeRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Demande
+    public function findOneBySomeField($value): ?Devis
     {
         return $this->createQueryBuilder('d')
             ->andWhere('d.exampleField = :val')
