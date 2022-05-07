@@ -33,10 +33,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Devis::class)]
     private $devis;
+    
+    #[ORM\Column(type: 'string', length: 50)]
+    private $prenom;
 
-    #[ORM\ManyToOne(targetEntity: Devis::class, inversedBy: 'user_repondre')]
-    private $user_repondre;
+    #[ORM\Column(type: 'string', length: 50)]
+    private $tel;
 
+    #[ORM\Column(type: 'string', length: 50)]
+    private $nom;
+     
     public function __construct()
     {
         $this->devis = new ArrayCollection();
@@ -173,16 +179,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getUserRepondre(): ?Devis
+    public function getPrenom(): ?string
     {
-        return $this->user_repondre;
+        return $this->prenom;
     }
 
-    public function setUserRepondre(?Devis $user_repondre): self
+    public function setPrenom(string $prenom): self
     {
-        $this->user_repondre = $user_repondre;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
+    public function getTel(): ?string
+    {
+        return $this->tel;
+    }
+
+    public function setTel(string $tel): self
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
 }

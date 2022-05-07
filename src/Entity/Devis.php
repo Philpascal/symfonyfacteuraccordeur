@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\DevisRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+//use App\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
+//use Doctrine\Common\Collections\Collection;
+use App\Repository\DevisRepository;
+// use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: DevisRepository::class)]
 class Devis
@@ -17,21 +18,9 @@ class Devis
 
     #[ORM\Column(type: 'datetime')]
     private $date_d;
-
-    #[ORM\Column(type: 'string', length: 5)]
-    private $civilite_d;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $nom_d;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $prenom_d;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $tel_d;
-
+            
     #[ORM\Column(type: 'integer')]
-    private $n°_d;
+    private $numero_d;
 
     #[ORM\Column(type: 'string', length: 50)]
     private $rue_d;
@@ -55,15 +44,13 @@ class Devis
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
-    #[ORM\OneToMany(mappedBy: 'user_repondre', targetEntity: User::class)]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'nom')]
     private $user_repondre;
-    
-    public function __construct()
-    {
-        $this->user = new ArrayCollection();
-        $this->user_répondre = new ArrayCollection();
-        $this->user_repondre = new ArrayCollection();
-    }
+
+    // public function __construct()
+    // {
+    //     $this->user = new ArrayCollection();
+    // }
 
     public function getId(): ?int
     {
@@ -82,62 +69,15 @@ class Devis
         return $this;
     }
 
-    public function getCiviliteD(): ?string
+            
+    public function getNumeroD(): ?int
     {
-        return $this->civilite_d;
+        return $this->numero_d;
     }
 
-    public function setCiviliteD(string $civilite_d): self
+    public function setNumeroD(int $numero_d): self
     {
-        $this->civilite_d = $civilite_d;
-
-        return $this;
-    }
-
-    public function getNomD(): ?string
-    {
-        return $this->nom_d;
-    }
-
-    public function setNomD(string $nom_d): self
-    {
-        $this->nom_d = $nom_d;
-
-        return $this;
-    }
-
-    public function getPrenomD(): ?string
-    {
-        return $this->prenom_d;
-    }
-
-    public function setPrenomD(string $prenom_d): self
-    {
-        $this->prenom_d = $prenom_d;
-
-        return $this;
-    }
-
-    public function getTelD(): ?string
-    {
-        return $this->tel_d;
-    }
-
-    public function setTelD(string $tel_d): self
-    {
-        $this->tel_d = $tel_d;
-
-        return $this;
-    }
-
-    public function getN°D(): ?int
-    {
-        return $this->n°_d;
-    }
-
-    public function setN°D(int $n°_d): self
-    {
-        $this->n°_d = $n°_d;
+        $this->numero_d = $numero_d;
 
         return $this;
     }
@@ -226,32 +166,14 @@ class Devis
         return $this;
     }
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUserRepondre(): Collection
+    public function getUserRepondre(): ?User
     {
         return $this->user_repondre;
     }
 
-    public function addUserRepondre(User $userRepondre): self
+    public function setUserRepondre(?User $user_repondre): self
     {
-        if (!$this->user_repondre->contains($userRepondre)) {
-            $this->user_repondre[] = $userRepondre;
-            $userRepondre->setUserRepondre($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUserRepondre(User $userRepondre): self
-    {
-        if ($this->user_repondre->removeElement($userRepondre)) {
-            // set the owning side to null (unless already changed)
-            if ($userRepondre->getUserRepondre() === $this) {
-                $userRepondre->setUserRepondre(null);
-            }
-        }
+        $this->user_repondre = $user_repondre;
 
         return $this;
     }

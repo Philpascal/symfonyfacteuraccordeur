@@ -1,0 +1,27 @@
+{% extends 'facteuraccordeur.html.twig' %}
+
+{% block title %}Hello FormulaireController!{% endblock %}
+
+{% block body %}
+    <main>
+
+        <h1>Formulaire de contact</h1>
+
+        {{form(form)}}
+
+        {# {{ form_start(devisForm) }}
+            {{ form_row(devisForm.date_d) }}
+            {{ form_row(devisForm.civilite_d) }}
+            {{ form_row(devisForm.n°_d) }}
+            {{ form_row(devisForm.rue_d) }}
+            {{ form_row(devisForm.voie_d) }}
+            {{ form_row(devisForm.code_postal_d) }}
+            {{ form_row(devisForm.ville_d) }}
+            {{ form_row(devisForm.message_d) }}
+            {{ form_row(devisForm.phot_d) }}
+                       
+            <button type="submit" class="btn btn-lg btn-primary">Register</button>
+        {{ form_end(devisForm) }} #}
+        
+</main>
+{% endblock %}
