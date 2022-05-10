@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -346,10 +348,6 @@ footer{
 
 
 
-.mainregister{
-	margin-left: 600px;
-	margin-top: 200px;
-}
 
 
 
@@ -863,16 +861,28 @@ footer{
 
 
 
-
 /***********************************************************************************************************/
 
 
-.login{
-	margin-top: 200px;
+.maincontact{
 	display: flex;
-	justify-content: center;
-
+	flex-direction: column;
+	margin-top: 15vh;
+	margin-left: 20vw;
 }
 
+.maincontact h1{
+	color: #b63515;
+	font-size: 2rem;
+}
 
+.maincontact h1{
+	font-size: 1.4rem;
+}
 
+.mainregister{
+	display: flex;
+	flex-direction: column;
+	margin-top: 15vh;
+	margin-left: 20vw;
+}

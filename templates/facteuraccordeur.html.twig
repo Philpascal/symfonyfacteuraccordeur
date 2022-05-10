@@ -3,6 +3,7 @@
 
 <head>
 
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
 
     <link href="{{ asset('facteuraccordeur/css/style.css') }}" rel="stylesheet" />
 
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -32,19 +34,26 @@
         {% for message in app.flashes('success') %}
             <div class="alert alert-success" role="alert">{{ message }}</div>
         {% endfor %}
-
+        
         {% if not is_granted("ROLE_USER") %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_register') }}">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_login') }}">Login</a>
-            </li>
-        {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
-            </li>
-        {% endif %}
+            {# <li class="nav-item"> #}
+                <a class="nav-link" href="{{ path('app_register') }}">
+                </a>
+            {# </li> #}
+            {# <li class="nav-item"> #}
+                <a class="nav-link" href="{{ path('app_login') }}">
+                </a>
+            {# </li> #}
+            {% else %}
+                {# <li class="nav-item"> #}
+                    <a class="nav-link" href="{{ path('app_logout') }}">Pour vous déconnecter ✅
+                    </a>
+                {# </li> #}
+                {# <li class="nav-item"> #}
+                    <a class="nav-link" href="{{ path('app_formulaire') }}">
+                    </a>
+                {# </li> #}
+            {% endif %}
 
         <div class="titretopbar">
            <h1>Facteur<br>Accordeur</h1> 

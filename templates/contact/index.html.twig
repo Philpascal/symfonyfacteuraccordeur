@@ -1,106 +1,46 @@
 {% extends 'facteuraccordeur.html.twig' %}
 
 {% block body %}
-<main>
-    <div>
-        <div>
+
+        <div class="maincontact">
+            
+            <h1>Pour accorder ou Restaurer votre piano</h1>
             <p>
-                Vous pouvez me joindre par téléphone au <span>01-02-03-04-05 </span>et/ou remplir le document ci-dessous:
+                Vous pouvez me joindre par téléphone au <span>01-02-03-04-05 </span>
             </p>
-            <h5>Formulaire de contact</h5>
-        </div>
-    </div>
+            <p>
+                Vous pouvez également m'envoyez un formulaire de contact.
+            </p>
 
-    <form id="myForm" action="" method="">
-        <div>
-
-            <div>
-                
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                    <label class="form-check-label" for="inlineRadio1">Monsieur</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Madame</label>
-                </div>
-
-                <div class="nom form-group">
-                    <label for="tata">Nom</label>
-                    <input type="text" class="form-control" id="tata" name="nom" placeholder="ex: DUPONT">
-                </div>
-
-                <div class="form-group">
-                    <label for="titi">Prénom</label>
-                    <input type="text" class="form-control" id="titi" name="prenom" placeholder="ex: Jean">
-                </div>
-
-                <div class="form-group">
-                    <label for="telep">Tél</label>
-                    <input type="tel" class="form-control" id="telep" name="telephone">
-                </div>
-
-                <div class="form-group">
-                    <label for="tctc">Email</label>
-                    <input type="email" class="form-control" id="tctc" name="email" placeholder="ex: j.but@gmail.com">
-                </div>
-
-                <h6>Adresse</h6>
-
-                <div>
-                    <label for="chiffre">N°</label>
-                    <input type="number" class="form-control" id="chiffre" name="chiffre">
-                </div>
-
-                <div>
-                    <label for="voix">Rue, Av, Bd...</label>
-                    <select class="form-select" id="voix">
-                        <option selected>Sélectionner</option>
-                        <option value="1">Chemin</option>
-                        <option value="2">Rue</option>
-                        <option value="3">Boulevard</option>
-                        <option value="3">Avenue</option>
-                        <option value="3">Autre</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="cp">Nom de la voie</label>
-                    <input type="text" class="form-control" id="cp" name="code">
-                </div>
-
-                <div class="form-group">
-                    <label for="cp">Code Postal</label>
-                    <input type="text" class="form-control" id="cp" name="code">
-                </div>
-
-                <div class="form-group">
-                    <label for="ville">Ville</label>
-                    <input type="text" class="form-control" id="ville" name="vil">
-                </div>
-
-            </div>
-
-            <div>
-
-                <div class="form-group">
-                    <label for="messag">Message</label>
-                    <textarea class="form-control" id="message" rows="15"></textarea>
-                </div>
-
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-chech-input">
-                        je souhaite être contacté par téléphone
-                    </label>
-                </div>
-
-                <button class="btn btn-primary offset-5 mt-5" type="submit">Envoyer</button>
-                
-            </div>
+            {% if not is_granted("ROLE_USER") %}
+            {# <li class="nav-item"> #}
+                <p>
+                    Pour envoyer le formulaire enregistrez vous.
+                </p>
+                <a class="nav-link" href="{{ path('app_register') }}">
+                    <button type="submit" class="btn btn-lg btn-primary">Vous enregistrer</button>
+                </a>
+            {# </li> #}
+            {# <li class="nav-item"> #}
+                <p>
+                    Si vous êtes déjà enregistré, loger vous directement.
+                </p>
+                <a class="nav-link" href="{{ path('app_login') }}">
+                    <button type="submit" class="btn btn-lg btn-primary">Vous loger</button>
+                </a>
+            {# </li> #}
+            {% else %}
+                {# <li class="nav-item"> #}
+                    <a class="nav-link" href="{{ path('app_logout') }}">
+                    </a>
+                {# </li> #}
+                {# <li class="nav-item"> #}
+                    <a class="nav-link" href="{{ path('app_formulaire') }}">
+                        <button type="submit" class="btn btn-lg btn-primary">Formulaire de contact</button> 
+                    </a>
+                {# </li> #}
+            {% endif %}
 
         </div>
-    </form>
-</main>
+
 {% endblock %}
