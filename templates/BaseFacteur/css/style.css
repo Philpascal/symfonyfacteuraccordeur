@@ -1,4 +1,6 @@
-/* html, body, div, span, applet, object, iframe,
+@charset "UTF-8";
+
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -17,9 +19,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-} */
+}
 /* HTML5 display-role reset for older browsers */
-/* article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -41,12 +43,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-
-
-
-
-
 
 
 
@@ -83,7 +79,7 @@ body{
 }
 
 .image_menu{
-	margin: 10px 8px 0 8px;
+	margin: 17px 8px 0 8px;
 	height: 34px;
 	border-radius: 50%;
 	padding: 0px 0 2px 0;
@@ -96,16 +92,17 @@ body{
 .titretopbar h1{
 	font-family: 'Boogaloo', cursive;
 	color: #fff;
-	font-size: 1.1rem;
+	font-size: 1.4rem;
+	letter-spacing: 2px;
 	margin-right: 5vw;
 	margin-bottom: 2px;
 }
 
 .logo{
-		margin-top: -8px;
-		margin-right: 10px;
-		height: 28px;
-	}
+	margin-bottom: 10px;
+	margin-right: 4vw;
+	height: 28px;
+}
 
 .container_site{
 	display: flex;
@@ -128,7 +125,7 @@ section h2{
 	margin-bottom: 16px;
 	width: 100%;
 	color: #b63515;
-    font-size: 24px;
+    font-size: 2.2rem;
 	letter-spacing: 2px;
 }
 
@@ -139,14 +136,16 @@ section div a{
 section div p{
 	color: #fff;
 	width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+	letter-spacing: 1px;
     margin-bottom: 8px;
 }
+
 
 section div p:hover{
 	background-color: #fff;
 	border-radius: 35%;
-	padding: 0 2px;
+	padding: 4px;
 	color: black;
 }
 
@@ -166,15 +165,14 @@ section iframe{
 	border-radius: 4px;
 }
 
-main{
-	max-width: 400px;
+.carrouselindex{
+	width: 98%;
 }
 
-.img_main_accordeur{
-		margin-top: 15vw;
-		border-radius: 4px;
-		width: 88%;
-	}
+.carousel-inner{
+	margin-top: 100px;
+	border-radius: 50% 0% / 40% 40%;
+}
 
 .antoine{
 	display: flex;
@@ -184,16 +182,17 @@ main{
 }
 
 .antoine h2{
-	font-size: 1.8rem;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
 	margin-top: 4vw;
-	margin-bottom: 4vw;
+	margin-bottom: 10px;
 	width: 64%;
 	z-index: 7;
 	color: #fff;
 }
 
 .page_accueil{
-	height: 70vw;
+	width: 98%;
 	margin-top: -7vw;
 	border-radius: 4px;
 }
@@ -207,8 +206,8 @@ main{
 
 .ile p{
 	font-weight: 500;
-	width: 82%;
-    font-size: 1.2rem;
+	width: 83%;
+    font-size: 1.4rem;
 	letter-spacing: 1px;
 	margin-bottom: 8px;
 }
@@ -220,7 +219,7 @@ aside{
 	align-items: center;
 	order: 2;
 	margin-top: 30px;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 	letter-spacing: 1px;
 }
 
@@ -251,6 +250,7 @@ aside figure:hover{
 }
 
 aside figcaption {
+	font-size: 1.3rem;
     padding-top: 5px;
     text-align: center;
 	color: #fff;
@@ -258,6 +258,7 @@ aside figcaption {
 
 .pianos_droits{
 	margin-top: 30px;
+	margin-bottom: 5px;
 	padding-top: 0px;
 	padding-bottom: 30px;
 }
@@ -308,7 +309,6 @@ footer{
 
 .telephone{
 	width: 32px;
-
 	border-radius: 50%;
 }
 
@@ -318,7 +318,6 @@ footer{
 
 .facebook{
 	width: 32px;
-
 	border-radius: 50%;
 }
 
@@ -328,7 +327,6 @@ footer{
 
 .mention_legale{
 	width: 32px;
-
 	border-radius: 50%;
 }
 
@@ -345,102 +343,34 @@ footer{
 
 
 
-@media only screen and (min-width: 320px) and (max-width:670px){
-
-	h2{
-		font-size: 18px;
-		margin-top: 12px;
-		width: 54%;
-		z-index: 7;
-	}
-	
-	.page_accueil{
-		margin-top: -12px;
-		max-height: 70vw;
-	}
-
-	.ile{
-		width: 100vw;
-		display: flex;
-		justify-content: end;
-		color: #fff;
-	}
-	
-	.ile p{
-		font-weight: 500;
-		width: 78vw;
-		letter-spacing: 1px;
-		margin-bottom: 8px;
-	}
-}
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 420px) and (max-width: 670px){
-
-	.titretopbar h1{
-		letter-spacing: 1px;
-		font-size: 1.2rem;
-		margin-right: 50px;
-		margin-top: -4px;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 670px) and (max-width: 720px){
+@media only screen and (min-width: 670px) and (max-width: 1220px){
 
 	.top_bar{
 		margin-top: 25px;
-
 	}
 
 	.image_menu{
-		margin: 12px 8px 2px 40px;
+		margin: 18px 8px 2px 40px;
 		height: 34px;
 	}
 
 	.titretopbar h1{
-		letter-spacing: 1px;
+		letter-spacing: 2px;
 		font-size: 1.3rem;
-		margin-right: 50px;
+		margin-right: 4vw;
 		margin-top: -4px;
 	}
 
 	.logo{
-		margin-top: -10px;
-		margin-right: 40px;
+		margin-top: -6px;
+		margin-right: 8px;
 		height: 28px;
 	}
 
 	.container_site {
 		display: grid;
-		grid-template-rows: 66% 20%;
-		grid-template-columns: 1fr 2fr;
+		grid-template-rows: 60% 40%;
+		grid-template-columns: 40% 60%;
 		grid-gap: 3vw;
 		grid-template-areas:
 			"hautg  hautd"
@@ -449,41 +379,43 @@ footer{
 
 	section{
 		grid-area: hautg;
-		margin-top: 120px;
+		margin-left: 2vw;
 	}
 
 	section h2{
-		margin: 0px;
-		margin-bottom: 20px;
+		margin-top: 8vh;
+		font-size: 2.6rem;
+		letter-spacing: 1px;
+	}
+
+	section div p{
+		margin-bottom: 12px;
 	}
 
 	iframe{
-		padding-top: 10vw;
-		width: 60%;
+		padding-top: 5vw;
+		width: 90%;
 	}
 
 	main{
 		grid-area: hautd;
-		padding-top: 50px;
-		margin: 0;
 	}
 
-	.img_main_accordeur{
-		margin: 0px;
-
+	.carrouselindex{
+		width: 98%;
 	}
 
-	h2{
-		font-size: 20px;
-		letter-spacing: 2px;
-		margin-top: 15px;
-		margin-bottom: 15px;
-		width: 54%;
-		z-index: 7;
+	.carousel-inner{
+		margin-right: 4vw;
+		width: 96%;
+	}
+
+	.antoine h2{
+		margin-top: 4vw;
 	}
 
 	.page_accueil{
-		margin-top: -35px;
+		margin-top: 0px;
 		max-height: 252px;
 	}
 
@@ -496,7 +428,7 @@ footer{
 	aside{
 		display: flex;
 		flex-direction:row;
-		margin-left: 13vw;
+		margin-left: 18vw;
 		margin-top: 0px;
 	}
 
@@ -509,232 +441,14 @@ footer{
 		grid-area: hautc;
 		order: 1;
 		margin-left: 11vw;
+		/* margin-top: 0%; */
+		margin-bottom: 30px;
 	}
 	
 	.piano{
 		grid-area: hautc;
 	}
-
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
-	.localisation{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.localisation:hover{
-		border-radius: 20%;
-	}
-	
-	.telephone{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.telephone:hover{
-		border-radius: 20%;
-	}
-
-	.facebook{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.facebook:hover{
-		border-radius: 20%;
-	}
-	
-	.mention_legale{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.mention_legale:hover{
-		border-radius: 20%;
-	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (min-width: 720px) and (max-width: 1220px){
-
-	.top_bar{
-		margin-top: 40px;
-	}
-
-	.image_menu{
-		margin: 12px 8px 4px 70px;
-		height: 34px;
-	}
-
-	.titretopbar h1{
-		letter-spacing: 1px;
-		font-size: 1.4rem;
-		margin-right: 50px;
-		margin-top: -4px;
-	}
-
-	.logo{
-		margin-top: -10px;
-		margin-right: 70px;
-		height: 28px;
-	}
-
-	.container_site {
-		display: grid;
-		grid-template-rows: 66% 20%;
-		*grid-template-columns: 1fr 2fr;
-		grid-gap: 3vw;
-		grid-template-areas:
-			"hautg  hautd"
-			"hautc hautc";
-	}
-
-	section{
-		grid-area: hautg;
-		margin-top: 140px;
-		margin-left: 8vw;
-	}
-
-	section h2{
-		margin: 0px;
-		margin-bottom: 20px;
-	}
-
-	iframe{
-		padding-top: 10vw;
-		width: 80%;
-	}
-
-	main{
-		grid-area: hautd;
-		padding-top: 50px;
-		margin: 0;
-	}
-
-	.img_main_accordeur{
-		margin: 0px;
-	}
-
-	h2{
-		font-size: 20px;
-		letter-spacing: 2px;
-		margin-top: 15px;
-		margin-bottom: 15px;
-		width: 54%;
-		z-index: 7;
-	}
-
-	.page_accueil{
-		margin-top: -35px;
-		max-height: 252px;
-	}
-
-	p{
-		font-size: 20px;
-		letter-spacing: 1px;
-		margin: 0px;
-	}
-
-	aside{
-		display: flex;
-		flex-direction:row;
-		margin-left: 13vw;
-		margin-top: 0px;
-	}
-
-	aside figure {
-		width: 20vw;
-		margin: 5vw;
-	}
-	
-	.accessoire{
-		grid-area: hautc;
-		order: 1;
-		margin-left: 11vw;
-	}
-	
-	.piano{
-		grid-area: hautc;
-	}
-
-	footer{
-		padding: 10px 0;
-	}
-
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
-
-	.localisation{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.localisation:hover{
-		border-radius: 20%;
-	}
-	
-	.telephone{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.telephone:hover{
-		border-radius: 20%;
-	}
-
-	.facebook{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.facebook:hover{
-		border-radius: 20%;
-	}
-	
-	.mention_legale{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.mention_legale:hover{
-		border-radius: 20%;
-	}
-}
-
-
-
-
-
 
 
 
@@ -783,9 +497,16 @@ footer{
 	}
 
 	section h2{
+		font-size: 1.8rem;
 		margin: 0px;
 		margin-bottom: 40px;
     }
+
+	section div p{
+		font-size: 1.2rem;
+		letter-spacing: 2px;
+	}
+	
 
 	.prestations{
 		margin-bottom: 20px;
@@ -813,10 +534,10 @@ footer{
 		max-width: 50vw;
 	}
 
-	.img_main_accordeur{
-		margin: 0px; */
-		/*margin-top: 0vw;*/
-	/* }
+	.carousel-inner{
+		margin-top: 20px;
+		max-height: 400px;
+	}
 
 	h2{
 		font-size: 20px;
@@ -888,11 +609,6 @@ footer{
 
 	.imgdiap{
 		margin-left: 10px;
-		padding-bottom: 6px;
-		padding-top: 30px;
-		padding-left: 10px;
-		border-radius: 12px;
-		width: 70%;
 	}
 
 	.figdiap{
@@ -903,22 +619,18 @@ footer{
 	}
 
 	.imgboit{
-		margin-left: 14px;
-		padding-right: 10px;
-		width: 70%;
-		padding-bottom: 6px;
-		border-radius: 12px;
-	}
+		margin-left: 8px;
+	} 
 
 	.figboit{
-		padding-bottom: 10px;
-		margin-top: 6px;
+		padding-bottom: 15px;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-top: 4px;
 	}
 
 	.imgcle{
-		margin-left: 14px;
-		border-radius: 12px;
-		width: 70%;
+		margin-left: 5px;
 	}
 
 	.figcle{
@@ -935,73 +647,34 @@ footer{
 		width: 105%;
 	}
 
-	.imgpiad{
-		border-radius: 12px;
-		margin-top: 10px;
-        margin-bottom: 20px;
-		padding-top: 8px;
-	}
-
 	.figpiaq{
-        padding-top: 10px;
-		
+		padding: 10px;
 	}
 
 	.imgpiaq{
-        margin-bottom: 20px;
-        margin-top: 10px;
-        padding-right: 20px;
-		border-radius: 12px;
-		width: 75%;
+		margin-right: 10px;
 	}
-	
-	footer{
-		padding: 10px 0;
-	}
+}
 
-	.arobase{
-		width: 38px;
-	}
-	
-	.arobase:hover{
-		border-radius: 20%;
-		background-color: #fff;
-	}
+.maincontact{
+	display: flex;
+	flex-direction: column;
+	margin-top: 15vh;
+	margin-left: 20vw;
+}
 
-	.localisation{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.localisation:hover{
-		border-radius: 20%;
-	}
-	
-	.telephone{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.telephone:hover{
-		border-radius: 20%;
-	}
+.maincontact h1{
+	color: #b63515;
+	font-size: 2rem;
+}
 
-	.facebook{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.facebook:hover{
-		border-radius: 20%;
-	}
-	
-	.mention_legale{
-		width: 38px;
-		border-radius: 50%;
-	}
-	
-	.mention_legale:hover{
-		border-radius: 20%;
-	}
-} */
+.maincontact h1{
+	font-size: 1.4rem;
+}
 
+.mainregister{
+	display: flex;
+	flex-direction: column;
+	margin-top: 15vh;
+	margin-left: 20vw;
+}
