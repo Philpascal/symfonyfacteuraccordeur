@@ -21,6 +21,11 @@
     </section>
 
     <main class="carrouselindex">
+        <div class="okmail">
+            {% for message in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">{{ message }}</div>
+            {% endfor %}
+        </div>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">

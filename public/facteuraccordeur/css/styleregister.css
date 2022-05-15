@@ -1,0 +1,25 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items:center;
+    margin: 0 10vw 0 10vw;
+}
+
+.mainregister{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
+.mainregister h1{
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.mainregister input{
+    margin-bottom: 30px;
+}
+
+.mainregister button{
+    margin-top: 30px;
+    width: 110px;
+}

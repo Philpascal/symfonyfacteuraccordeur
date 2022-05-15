@@ -1,6 +1,6 @@
 {% extends 'facteuraccordeur.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/styleregister.css') }}" rel="stylesheet" />{% endblock %}
 
-{% block title %}Register{% endblock %}
 
 {% block body %}
 
@@ -11,7 +11,7 @@
             <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
         {% endfor %}
     
-        <h1>Register</h1>
+        <h1 class="h3 font-weight-normal">Veuillez vous enregistrer</h1>
 
         {{ form_start(registrationForm) }}
             {{ form_row(registrationForm.nom) }}

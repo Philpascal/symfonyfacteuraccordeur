@@ -79,7 +79,7 @@ body{
 }
 
 .image_menu{
-	margin: 17px 8px 0 8px;
+	margin: 17px 0 0 8px;
 	height: 34px;
 	border-radius: 50%;
 	padding: 0px 0 2px 0;
@@ -92,7 +92,7 @@ body{
 .titretopbar h1{
 	font-family: 'Boogaloo', cursive;
 	color: #fff;
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	letter-spacing: 2px;
 	margin-right: 5vw;
 	margin-bottom: 2px;
@@ -104,7 +104,7 @@ body{
 	height: 28px;
 }
 
-.container_site{
+.cont_site{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -125,7 +125,7 @@ section h2{
 	margin-bottom: 16px;
 	width: 100%;
 	color: #b63515;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
 	letter-spacing: 2px;
 }
 
@@ -163,6 +163,11 @@ section iframe{
 	margin-top: 15px;
 	width: 100%;
 	border-radius: 4px;
+}
+
+.okmail{
+	text-align: center;
+	margin-top: 100px;
 }
 
 .carrouselindex{
@@ -367,7 +372,7 @@ footer{
 		height: 28px;
 	}
 
-	.container_site {
+	.cont_site {
 		display: grid;
 		grid-template-rows: 60% 40%;
 		grid-template-columns: 40% 60%;
@@ -384,7 +389,6 @@ footer{
 
 	section h2{
 		margin-top: 8vh;
-		font-size: 2.6rem;
 		letter-spacing: 1px;
 	}
 
@@ -485,7 +489,7 @@ footer{
 		height: 28px;
 	}
 
-	.container_site {
+	.cont_site {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -497,7 +501,6 @@ footer{
 	}
 
 	section h2{
-		font-size: 1.8rem;
 		margin: 0px;
 		margin-bottom: 40px;
     }
@@ -534,8 +537,11 @@ footer{
 		max-width: 50vw;
 	}
 
+	.carrouselindex{
+		margin-top: 40px;
+	}
+
 	.carousel-inner{
-		margin-top: 20px;
 		max-height: 400px;
 	}
 
@@ -654,27 +660,4 @@ footer{
 	.imgpiaq{
 		margin-right: 10px;
 	}
-}
-
-.maincontact{
-	display: flex;
-	flex-direction: column;
-	margin-top: 15vh;
-	margin-left: 20vw;
-}
-
-.maincontact h1{
-	color: #b63515;
-	font-size: 2rem;
-}
-
-.maincontact h1{
-	font-size: 1.4rem;
-}
-
-.mainregister{
-	display: flex;
-	flex-direction: column;
-	margin-top: 15vh;
-	margin-left: 20vw;
 }

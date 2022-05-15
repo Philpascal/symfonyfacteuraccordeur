@@ -1,0 +1,41 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    margin: 0 10vw 0 10vw;
+}
+
+.mainrequest{
+    margin-top: 18vh;
+}
+
+.mainrequest h1{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.mainrequest label{
+    letter-spacing: 1px !important;
+    font-size: 1.2rem;
+}
+
+.mainrequest div{
+    margin-bottom: 20px;
+}
+
+.mainrequest small{
+    font-size: 1.2rem;
+    color: #b63515;
+}
+
+.mainrequest .btn{
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 365px){
+    .mainrequest h1{
+        text-align: left;
+    }
+}

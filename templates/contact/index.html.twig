@@ -1,46 +1,35 @@
 {% extends 'facteuraccordeur.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/stylecontact.css') }}" rel="stylesheet" />{% endblock %}
 
 {% block body %}
 
-        <div class="maincontact">
+    <div class="maincontact">
+        
+        {% if not is_granted("ROLE_USER") %}
+
+            <img class="telephone" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#">
+
+            <p class="numero">06 06 06 06 06</p>
+
+            <img class="arobase" src="{{ asset('facteuraccordeur/images/arobase.png') }}">
+            <br>
+            <a class="btn btn-primary m-1" href="{{ path('app_register') }}">
+                Enregistrement
+            </a>
+            <a class="btn btn-primary m-1" href="{{ path('app_login') }}">
+                Connexion
+            </a>
+            <p class="info">
+                L'enregistrement est obligatoire pour la première conexion
+            </p>
             
-            <h1>Pour accorder ou Restaurer votre piano</h1>
-            <p>
-                Vous pouvez me joindre par téléphone au <span>01-02-03-04-05 </span>
-            </p>
-            <p>
-                Vous pouvez également m'envoyez un formulaire de contact.
-            </p>
-
-            {% if not is_granted("ROLE_USER") %}
-            {# <li class="nav-item"> #}
-                <p>
-                    Pour envoyer le formulaire enregistrez vous.
-                </p>
-                <a class="nav-link" href="{{ path('app_register') }}">
-                    <button type="submit" class="btn btn-lg btn-primary">Vous enregistrer</button>
+                {% else %}
+                <a class="nav-link" href="{{ path('app_logout') }}"></a>
+                <a class="boutonformulairecontact btn btn-primary" href="{{ path('app_formulaire') }}">
+                Formulaire de contact
                 </a>
-            {# </li> #}
-            {# <li class="nav-item"> #}
-                <p>
-                    Si vous êtes déjà enregistré, loger vous directement.
-                </p>
-                <a class="nav-link" href="{{ path('app_login') }}">
-                    <button type="submit" class="btn btn-lg btn-primary">Vous loger</button>
-                </a>
-            {# </li> #}
-            {% else %}
-                {# <li class="nav-item"> #}
-                    <a class="nav-link" href="{{ path('app_logout') }}">
-                    </a>
-                {# </li> #}
-                {# <li class="nav-item"> #}
-                    <a class="nav-link" href="{{ path('app_formulaire') }}">
-                        <button type="submit" class="btn btn-lg btn-primary">Formulaire de contact</button> 
-                    </a>
-                {# </li> #}
-            {% endif %}
+        {% endif %}
 
-        </div>
+    </div>
 
 {% endblock %}

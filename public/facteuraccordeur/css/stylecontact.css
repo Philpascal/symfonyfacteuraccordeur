@@ -1,0 +1,48 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items:center;
+    margin: 0 10vw 0 10vw;
+}
+
+.maincontact{
+	margin-top: 20vh;
+	margin-left: 0;
+}
+
+.maincontact img{
+	margin-bottom: 10px;
+}
+
+.maincontact p{
+	margin-bottom: 10vh;
+}
+
+.maincontact a{
+	width: 100px;
+}
+
+.numero{
+	font-size: 1.8rem;
+}
+
+.boutonformulairecontact{
+	width: 200px !important;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	margin-top: 14vh;
+	margin-bottom: 4vh;
+}
+
+.info{
+	font-size: 1.4rem;
+	color: #b63515;
+	text-align: center;
+	margin-top: 10px;
+}
+
+@media only screen and (min-width: 400px){
+    .maincontact{
+        margin-top: 24vh;
+    }
+}
