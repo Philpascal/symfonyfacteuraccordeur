@@ -18,6 +18,15 @@
 	margin-bottom: 10vh;
 }
 
+.telephonecontact{
+	width: 36px;
+	border-radius: 50%;
+}
+
+.arobasecontact{
+	width: 36px;
+}
+
 .maincontact a{
 	width: 100px;
 }

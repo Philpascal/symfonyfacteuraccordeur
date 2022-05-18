@@ -7,11 +7,11 @@
         
         {% if not is_granted("ROLE_USER") %}
 
-            <img class="telephone" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#">
+            <img class="telephonecontact" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#">
 
             <p class="numero">06 06 06 06 06</p>
 
-            <img class="arobase" src="{{ asset('facteuraccordeur/images/arobase.png') }}">
+            <img class="arobasecontact" src="{{ asset('facteuraccordeur/images/arobase.png') }}">
             <br>
             <a class="btn btn-primary m-1" href="{{ path('app_register') }}">
                 Enregistrement

@@ -52,17 +52,17 @@ class Devis
     //     $this->user = new ArrayCollection();
     // }
 
-    public function getId(): ?int
+    public function getid(): ?int
     {
         return $this->id;
     }
 
-    public function getDateD(): ?\DateTimeInterface
+    public function getdate_d(): ?\DateTimeInterface
     {
         return $this->date_d;
     }
 
-    public function setDateD(\DateTimeInterface $date_d): self
+    public function setdate_d(\DateTimeInterface $date_d): self
     {
         $this->date_d = $date_d;
 
@@ -70,84 +70,84 @@ class Devis
     }
 
             
-    public function getNumeroD(): ?int
+    public function getnumero_d(): ?int
     {
         return $this->numero_d;
     }
 
-    public function setNumeroD(int $numero_d): self
+    public function setnumero_d(int $numero_d): self
     {
         $this->numero_d = $numero_d;
 
         return $this;
     }
 
-    public function getRueD(): ?string
+    public function getrue_d(): ?string
     {
         return $this->rue_d;
     }
 
-    public function setRueD(string $rue_d): self
+    public function setrued(string $rue_d): self
     {
         $this->rue_d = $rue_d;
 
         return $this;
     }
 
-    public function getVoieD(): ?string
+    public function getvoie_d(): ?string
     {
         return $this->voie_d;
     }
 
-    public function setVoieD(string $voie_d): self
+    public function setvoie_d(string $voie_d): self
     {
         $this->voie_d = $voie_d;
 
         return $this;
     }
 
-    public function getCodePostalD(): ?int
+    public function getcode_postal_d(): ?int
     {
         return $this->code_postal_d;
     }
 
-    public function setCodePostalD(int $code_postal_d): self
+    public function setcode_postal_d(int $code_postal_d): self
     {
         $this->code_postal_d = $code_postal_d;
 
         return $this;
     }
 
-    public function getVilleD(): ?string
+    public function getville_d(): ?string
     {
         return $this->ville_d;
     }
 
-    public function setVilleD(string $ville_d): self
+    public function setville_d(string $ville_d): self
     {
         $this->ville_d = $ville_d;
 
         return $this;
     }
 
-    public function getMessageD(): ?string
+    public function getmessage_d(): ?string
     {
         return $this->message_d;
     }
 
-    public function setMessageD(string $message_d): self
+    public function setmessage_d(string $message_d): self
     {
         $this->message_d = $message_d;
 
         return $this;
     }
 
-    public function getPhotD(): ?string
+    public function getphot_d(): ?string
     {
         return $this->phot_d;
     }
 
-    public function setPhotD(?string $phot_d): self
+    public function setphot_d(?string $phot_d): self
     {
         $this->phot_d = $phot_d;
 
@@ -166,12 +166,12 @@ class Devis
         return $this;
     }
 
-    public function getUserRepondre(): ?User
+    public function getuser_repondre(): ?User
     {
         return $this->user_repondre;
     }
 
-    public function setUserRepondre(?User $user_repondre): self
+    public function setuser_repondre(?User $user_repondre): self
     {
         $this->user_repondre = $user_repondre;
 
