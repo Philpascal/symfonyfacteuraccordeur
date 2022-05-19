@@ -22,6 +22,7 @@
 
     <main class="carrouselindex">
         <div class="okmail">
+            {# <div class="alert alert-success" role="alert">Pour donner un style au message</div> #}
             {% for message in app.flashes('success') %}
             <div class="alert alert-success" role="alert">{{ message }}</div>
             {% endfor %}
