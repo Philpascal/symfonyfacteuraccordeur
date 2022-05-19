@@ -17,30 +17,30 @@ class DevisType extends AbstractType
     {
         $builder
 
-            // ->add('date_d', DateType::class, [
-            //     "label" => "Date de la demande",
-            // ])
-            // ->add('numero_d', IntegerType::class, [
-            //     "label" => "N°",
-            // ])
-            ->add('rue_d', TextType::class, [
+            ->add('date', DateType::class, [
+                "label" => "Date de la demande",
+            ])
+            ->add('numero', IntegerType::class, [
+                "label" => "N°",
+            ])
+            ->add('rue', TextType::class, [
                  "label" => "Rue",
              ])
-            // ->add('voie_d', TextType::class, [
-            //     "label" => "Voie",
-            // ])
-            // ->add('code_postal_d', IntegerType::class, [
-            //     "label" => "Code postal",
-            // ])
-            // ->add('ville_d', TextType::class, [
-            //     "label" => "Ville",
-            // ])
-            // ->add('message_d', TextType::class, [
-            //     "label" => "Message",
-            // ])
-            // ->add('phot_d', TextType::class, [
-            //     "label" => "Photo",
-            // ])
+            ->add('voie', TextType::class, [
+                "label" => "Voie",
+            ])
+            ->add('codepostal', IntegerType::class, [
+                "label" => "Code postal",
+            ])
+            ->add('ville', TextType::class, [
+                "label" => "Ville",
+            ])
+            ->add('message', TextType::class, [
+                "label" => "Message",
+            ])
+            ->add('photo', TextType::class, [
+                "label" => "Photo",
+            ])
             ->add('Valider', SubmitType::class)
         ;
     }

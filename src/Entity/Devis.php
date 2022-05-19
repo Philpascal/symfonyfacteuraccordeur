@@ -17,139 +17,139 @@ class Devis
     private $id;
 
     #[ORM\Column(type: 'datetime')]
-    private $date_d;
+    private $date;
             
     #[ORM\Column(type: 'integer')]
-    private $numero_d;
+    private $numero;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $rue_d;
+    private $rue;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $voie_d;
+    private $voie;
 
     #[ORM\Column(type: 'integer')]
-    private $code_postal_d;
+    private $codepostal;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $ville_d;
+    private $ville;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $message_d;
+    private $message;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $phot_d;
+    private $photo;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'devis')]
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'nom')]
-    private $user_repondre;
+    private $userrepondre;
 
     // public function __construct()
     // {
     //     $this->user = new ArrayCollection();
     // }
 
-    public function getid(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getdate_d(): ?\DateTimeInterface
+    public function getDate(): ?\DateTimeInterface
     {
-        return $this->date_d;
+        return $this->date;
     }
 
-    public function setdate_d(\DateTimeInterface $date_d): self
+    public function setDate(\DateTimeInterface $date): self
     {
-        $this->date_d = $date_d;
+        $this->date = $date;
 
         return $this;
     }
 
             
-    public function getnumero_d(): ?int
+    public function getNumero(): ?int
     {
-        return $this->numero_d;
+        return $this->numero;
     }
 
-    public function setnumero_d(int $numero_d): self
+    public function setNumero(int $numero): self
     {
-        $this->numero_d = $numero_d;
+        $this->numero = $numero;
 
         return $this;
     }
 
-    public function getrue_d(): ?string
+    public function getRue(): ?string
     {
-        return $this->rue_d;
+        return $this->rue;
     }
 
-    public function setrued(string $rue_d): self
+    public function setRue(string $rue): self
     {
-        $this->rue_d = $rue_d;
+        $this->rue = $rue;
 
         return $this;
     }
 
-    public function getvoie_d(): ?string
+    public function getVoie(): ?string
     {
-        return $this->voie_d;
+        return $this->voie;
     }
 
-    public function setvoie_d(string $voie_d): self
+    public function setVoie(string $voie): self
     {
-        $this->voie_d = $voie_d;
+        $this->voie = $voie;
 
         return $this;
     }
 
-    public function getcode_postal_d(): ?int
+    public function getCodepostal(): ?int
     {
-        return $this->code_postal_d;
+        return $this->codepostal;
     }
 
-    public function setcode_postal_d(int $code_postal_d): self
+    public function setCodepostal(int $codepostal): self
     {
-        $this->code_postal_d = $code_postal_d;
+        $this->codepostal = $codepostal;
 
         return $this;
     }
 
-    public function getville_d(): ?string
+    public function getVille(): ?string
     {
-        return $this->ville_d;
+        return $this->ville;
     }
 
-    public function setville_d(string $ville_d): self
+    public function setVille(string $ville): self
     {
-        $this->ville_d = $ville_d;
+        $this->ville = $ville;
 
         return $this;
     }
 
-    public function getmessage_d(): ?string
+    public function getMessage(): ?string
     {
-        return $this->message_d;
+        return $this->message;
     }
 
-    public function setmessage_d(string $message_d): self
+    public function setMessage(string $message): self
     {
-        $this->message_d = $message_d;
+        $this->message = $message;
 
         return $this;
     }
 
-    public function getphot_d(): ?string
+    public function getPhoto(): ?string
     {
-        return $this->phot_d;
+        return $this->photo;
     }
 
-    public function setphot_d(?string $phot_d): self
+    public function setPhoto(?string $photo): self
     {
-        $this->phot_d = $phot_d;
+        $this->photo = $photo;
 
         return $this;
     }
@@ -160,20 +160,20 @@ class Devis
     }
 
     public function setUser(?User $user): self
-    {
+    {   
         $this->user = $user;
 
         return $this;
     }
 
-    public function getuser_repondre(): ?User
+    public function getUserrepondre(): ?User
     {
-        return $this->user_repondre;
+        return $this->userrepondre;
     }
 
-    public function setuser_repondre(?User $user_repondre): self
+    public function setUserrepondre(?User $userrepondre): self
     {
-        $this->user_repondre = $user_repondre;
+        $this->userrepondre = $userrepondre;
 
         return $this;
     }

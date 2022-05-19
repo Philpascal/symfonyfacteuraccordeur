@@ -115,15 +115,15 @@
 
                          <tr>
                             <td>{{ devis.user.nom }}</td>
-                             <td>{#{{ devis.user_repondre.nom }} #}</td>
-                            <td>{{ devis.date_d | date}}</td>
-                            <td>{{ devis.numero_d }}</td>
-                            <td>{{ devis.rue_d }}</td>
-                            <td>{{ devis.voie_d }}</td>
-                            <td>{{ devis.code_postal_d }}</td>
-                            <td>{{ devis.ville_d }}</td>
-                            <td>{{ devis.message_d }}</td>
-                            <td>{{ devis.phot_d }}</td>
+                             <td>{#{{ devis.userrepondre.nom }} #}</td>
+                            <td>{{ devis.date | date}}</td>
+                            <td>{{ devis.numero }}</td>
+                            <td>{{ devis.rue }}</td>
+                            <td>{{ devis.voie }}</td>
+                            <td>{{ devis.codepostal }}</td>
+                            <td>{{ devis.ville }}</td>
+                            <td>{{ devis.message }}</td>
+                            <td>{{ devis.photo }}</td>
                         </tr> 
 
                         {% endfor %}
