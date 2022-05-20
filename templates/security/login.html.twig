@@ -1,5 +1,6 @@
 {% extends 'facteuraccordeur.html.twig' %}
 {% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/stylelogin.css') }}" rel="stylesheet" />{% endblock %}
+
 {% block body %}
 
     <main class="mainlogin">
@@ -21,7 +22,7 @@
             <label for="inputPassword">Password</label>
             <input type="password" name="password" id="inputPassword" class="form-control mb-3" autocomplete="current-password" required>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <button class="btn btn-lg btn-primary" type="submit">
+            <button class="btn btn-lg btn-primary pt-1 pb-1" type="submit">
                 Connexion
             </button>
 

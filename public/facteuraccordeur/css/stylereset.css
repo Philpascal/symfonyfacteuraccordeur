@@ -1,0 +1,20 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items:stretch;
+    margin: 0 10vw 0 10vw;
+}
+
+.mainreset{
+	margin-top: 25vh;
+}
+
+.mainreset label{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.mainreset button{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}

@@ -228,10 +228,6 @@ aside{
 	letter-spacing: 1px;
 }
 
-aside a{
-	text-decoration: none;
-}
-
 aside figure {
 	border: solid 1px #bfaa8c;
 	border-bottom: none;
@@ -263,7 +259,7 @@ aside figcaption {
 
 .pianos_droits{
 	margin-top: 30px;
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 	padding-top: 0px;
 	padding-bottom: 30px;
 }
@@ -281,7 +277,6 @@ aside figcaption {
 .pianos_queues figcaption{
 	 padding-bottom: 12px;
 }
-
 
 footer{
 	display: flex;

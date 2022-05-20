@@ -1,0 +1,15 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.maincheck{
+    margin-top: 20vh;
+    margin-bottom: 14vh;
+    text-align: center;
+}
+
+.maincheck p{
+    margin-top: 20px;
+}

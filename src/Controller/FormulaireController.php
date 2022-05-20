@@ -28,7 +28,6 @@ class FormulaireController extends AbstractController
             $em->flush();
             return $this->redirectToRoute('home');
         }
-        
 
         return $this->render('formulaire/index.html.twig', [
             'form' => $form->createView(),

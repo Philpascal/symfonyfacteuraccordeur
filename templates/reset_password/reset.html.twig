@@ -1,12 +1,17 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Reset your password{% endblock %}
+{% extends 'facteuraccordeur.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/stylereset.css') }}" rel="stylesheet" />{% endblock %}
 
 {% block body %}
-    <h1>Reset your password</h1>
 
-    {{ form_start(resetForm) }}
-        {{ form_row(resetForm.plainPassword) }}
-        <button class="btn btn-primary">Reset password</button>
-    {{ form_end(resetForm) }}
+    <main class="mainreset">
+
+        <h1 class="h3 mb-3 font-weight-normal">Réinitialiser votre mot de passe</h1>
+
+        {{ form_start(resetForm) }}
+            {{ form_row(resetForm.plainPassword) }}
+            <button class="btn btn-lg btn-primary">Valider</button>
+        {{ form_end(resetForm) }}
+
+    </main>
+
 {% endblock %}

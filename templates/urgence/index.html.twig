@@ -1,0 +1,44 @@
+{% extends 'facteuraccordeur.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/styleaccord.css') }}" rel="stylesheet" />{% endblock %}
+
+{% block body %}
+
+    <main class="mainaccord">
+
+        <h2 class="h1">Urgence</h2>
+        <p>
+            A votre écoute et disponibilité, Antoine BERTHIER intervient dès votre appel téléphonique.
+        </p>
+        <img class="imgaccord" src="{{ asset('facteuraccordeur/images/accordeur2.jpg') }}" alt="#">
+        
+        <div class="tableautarif">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Tarif 2022</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accord</td>
+                        <td>130 €</td>
+                    </tr>
+                    <tr>
+                        <td>Armonisation</td>
+                        <td>190 €</td>
+                    </tr>
+                    <tr>
+                        <td>Réparation</td>
+                        <td>selon devis</td>
+                    </tr>
+                    <tr>
+                        <td>Restauration</td>
+                        <td>selon devis</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+{% endblock %}

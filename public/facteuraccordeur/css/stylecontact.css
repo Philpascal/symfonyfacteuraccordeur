@@ -6,7 +6,7 @@
 }
 
 .maincontact{
-	margin-top: 20vh;
+	margin-top: 23vh;
 	margin-left: 0;
 }
 
@@ -14,13 +14,17 @@
 	margin-bottom: 10px;
 }
 
+.telephonecontact{
+	width: 36px;
+	border-radius: 50%;
+}
+
 .maincontact p{
 	margin-bottom: 10vh;
 }
 
-.telephonecontact{
-	width: 36px;
-	border-radius: 50%;
+.numero{
+	font-size: 1.8rem;
 }
 
 .arobasecontact{
@@ -29,10 +33,14 @@
 
 .maincontact a{
 	width: 100px;
+	padding: 4px 10px;
 }
 
-.numero{
-	font-size: 1.8rem;
+.info{
+	font-size: 1.4rem;
+	color: #b63515;
+	text-align: center;
+	margin-top: 10px;
 }
 
 .boutonformulairecontact{
@@ -41,13 +49,6 @@
 	letter-spacing: 1px;
 	margin-top: 14vh;
 	margin-bottom: 4vh;
-}
-
-.info{
-	font-size: 1.4rem;
-	color: #b63515;
-	text-align: center;
-	margin-top: 10px;
 }
 
 @media only screen and (min-width: 400px){

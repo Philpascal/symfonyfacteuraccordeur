@@ -26,7 +26,7 @@
 
     <header class="top_bar">
 
-        <a href="{{ path('home') }}"><img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#"></a>
+        <a href="{{ path('home') }}#idprestation"><img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#"></a>
 
         {% if not is_granted("ROLE_USER") %}
             <a class="nav-link" href="{{ path('app_register') }}">
