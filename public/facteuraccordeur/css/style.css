@@ -284,6 +284,10 @@ aside{
 	letter-spacing: 1px;
 }
 
+aside a{
+	text-decoration: none;
+}
+
 aside figure {
 	border: solid 1px #bfaa8c;
 	border-bottom: none;
