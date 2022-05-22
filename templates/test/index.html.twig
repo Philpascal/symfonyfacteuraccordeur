@@ -1,9 +1,8 @@
 {% extends 'facteuraccordeur.html.twig' %}
 
 {% block body %}
-
+    
     <section>
-
         <h2>Mes prestations</h2>
         <div class="prestations">
             <a href="{{ path('app_accord') }}"><p>Accord - Harmonisation</p></a>
@@ -14,7 +13,7 @@
         <div class="renseignements">
             <a href="{{ path('app_urgence') }}"><p>Urgence</p></a>
             <a href="{{ path('app_urgence') }}"><p>Tarifs / Devis</p></a>
-            <a href=""><p>Zone d'intervention</p></a>
+            <a href="{{ path('app_zone') }}"><p>Zone d'intervention</p></a>
         </div>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/bXf4NfOJ1Is" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -71,28 +70,38 @@
 
     <aside>
         <div class="accessoire">
-            <figure>
-                <img  class="imgdiap" src="{{ asset('facteuraccordeur/images/diapason.PNG') }}" alt="#">
-                <figcaption class="figdiap">Les diapasons</figcaption>
-            </figure>
-            <figure>
-                <img class="imgboit" src="{{ asset('facteuraccordeur/images/boite_outils.PNG') }}" alt="#">
-                <figcaption class="figboit">Les accessoires</figcaption>
-            </figure>
-            <figure>
-                <img class="imgcle" src="{{ asset('facteuraccordeur/images/clef.PNG') }}" alt="#">
-                <figcaption class="figcle">Les clefs</figcaption>
-            </figure>
+            <a href="{{ path('app_zone') }}">
+                <figure>
+                    <img  class="imgdiap" src="{{ asset('facteuraccordeur/images/diapason.PNG') }}" alt="#">
+                    <figcaption class="figdiap">Les diapasons</figcaption>
+                </figure>
+            </a>
+            <a href="{{ path('app_zone') }}">
+                <figure>
+                    <img class="imgboit" src="{{ asset('facteuraccordeur/images/boite_outils.PNG') }}" alt="#">
+                    <figcaption class="figboit">Les accessoires</figcaption>
+                </figure>
+            </a>
+            <a href="{{ path('app_zone') }}">
+                <figure>
+                    <img class="imgcle" src="{{ asset('facteuraccordeur/images/clef.PNG') }}" alt="#">
+                    <figcaption class="figcle">Les clefs</figcaption>
+                </figure>
+            </a>   
         </div>
         <div class="piano">
-            <figure class="pianos_droits">
-                <figcaption class="figpiad">Les pianos droits</figcaption>
-                <img  class="imgpiad" src="{{ asset('facteuraccordeur/images/piano1.PNG') }}" alt="#">
-            </figure>
-            <figure class="pianos_queues">
-                <figcaption class="figpiaq">Les pianos à queues</figcaption>
-                <img class="imgpiaq" src="{{ asset('facteuraccordeur/images/piano2.jpg') }}" alt="#">
-            </figure>
+            <a href="{{ path('app_zone') }}">
+                <figure class="pianos_droits">
+                    <figcaption class="figpiad">Les pianos droits</figcaption>
+                    <img  class="imgpiad" src="{{ asset('facteuraccordeur/images/piano1.PNG') }}" alt="#">
+                </figure>
+            </a>
+            <a href="{{ path('app_zone') }}">
+                <figure class="pianos_queues">
+                    <figcaption class="figpiaq">Les pianos à queues</figcaption>
+                    <img class="imgpiaq" src="{{ asset('facteuraccordeur/images/piano2.jpg') }}" alt="#">
+                </figure>
+            </a>
         </div>
     </aside>
 

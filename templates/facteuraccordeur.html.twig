@@ -26,7 +26,58 @@
 
     <header class="top_bar">
 
-        <a href="{{ path('home') }}#idprestation"><img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#"></a>
+        <img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#" onclick="openModal()">
+
+        <div id="modal">
+            <h2>Mes prestations</h2>
+            <ul>
+                <a href="{{ path('home') }}"  onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/menu.png') }}" alt="#">
+                        <p>Accueil</p>
+                        
+                    </li>
+                </a>
+                <a href="{{ path('app_accord') }}" onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/note5.png') }}" alt="#">
+                        Accord - Harmonisation
+                    </li>
+                </a>
+
+                <a href="{{ path('app_reparation') }}" onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/note4.png') }}" alt="#">
+                        Reparation - Restauration
+                    </li>
+                </a>
+                <a href="{{ path('app_conseil') }}" onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/note2.jpg') }}" alt="#">
+                        Conseil Achat-Location
+                    </li>
+                </a>
+                <a href="{{ path('app_urgence') }}" onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/note6.png') }}" alt="#">
+                        Urgence
+                    </li>
+                </a>
+                <a href="{{ path('app_urgence') }}" onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/note1.jpg') }}" alt="#">
+                        Tarifs / Devis
+                    </li>
+                </a>
+                <a href="{{ path('app_zone') }}" onclick="closeModal()">
+                    <li>
+                        <img class="image_menu" src="{{ asset('facteuraccordeur/images/note3.png') }}" alt="#">
+                        Zone d'intervention
+                    </li>
+                </a>
+            </ul>
+            <button id="close" onclick="closeModal()">X</button>
+        </div>
 
         {% if not is_granted("ROLE_USER") %}
             <a class="nav-link" href="{{ path('app_register') }}">
@@ -54,14 +105,16 @@
     <footer class="footer">
         
         <a href="{{ path('app_contact') }}"><img class="arobase" src="{{ asset('facteuraccordeur/images/arobase.png') }}" alt="#"></a>
-        <a href="#"><img class="localisation" src="{{ asset('facteuraccordeur/images/localisation.jpg') }}" alt="#"></a>
+        <a href="{{ path('app_zone') }}"><img class="localisation" src="{{ asset('facteuraccordeur/images/localisation.jpg') }}" alt="#"></a>
         <a href="{{ path('app_contact') }}"><img class="telephone" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#"></a>
-        <a href="#"><img class="facebook" src="{{ asset('facteuraccordeur/images/facebook.jpg') }}" alt="#"></a>
-        <a href="#"><img class="mention_legale" src="{{ asset('facteuraccordeur/images/mention_legale.jpg') }}" alt="#"></a>
+        <a href="{{ path('app_zone') }}"><img class="facebook" src="{{ asset('facteuraccordeur/images/facebook.jpg') }}" alt="#"></a>
+        <a href="{{ path('app_zone') }}"><img class="mention_legale" src="{{ asset('facteuraccordeur/images/mention_legale.jpg') }}" alt="#"></a>
         
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <script src="{{ asset('facteuraccordeur/main.js') }}"></script>
 
 </body>
 </html>

@@ -73,6 +73,13 @@ td{
     color: #bfaa8c;
 }
 
+.hzone{
+    font-size: 1.8rem;
+    margin-top: 24vh;
+    color: #b63515;
+    text-align: center;
+}
+
 @media only screen and (min-width: 670px){
     .imgaccord{
         width: 70%;

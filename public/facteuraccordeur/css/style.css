@@ -82,11 +82,67 @@ body{
 	margin: 17px 0 0 8px;
 	height: 34px;
 	border-radius: 50%;
-	padding: 0px 0 2px 0;
+	padding: 0px 0 4px 0;
 }
 
 .image_menu:hover{
 	border-radius: 20%;
+}
+/**********************************************************************modale****************************************************************/
+#modal{
+    border-radius: 30% 0% / 40% 40%;
+    background: #c7913c;
+    padding: 20px 10px 20px 30px;
+    position: fixed;
+    top: -800px;
+    left: 20px;
+	/* width: 80%; */
+	/* max-width: 800px; */
+    transition: 0.5s;
+	display: flex;
+	flex-direction: column;
+}
+
+#close{
+    background-color: red;
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+	width: 35px;
+	height: 35px;
+}
+
+#modal h2{
+	font-size: 1.6rem;
+	color: #b63515;
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+
+#modal ul{
+	text-align: left;
+}
+
+#modal li{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#modal img{
+	margin: 0px 10px 0px 0px;
+}
+
+#modal a{
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 1px;
+	 margin-left: 5px; */
+}
+
+#modal a:hover{
+	color: black;
 }
 
 .titretopbar h1{
@@ -461,12 +517,16 @@ footer{
 @media only screen and (min-width: 1220px){
 
 	.top_bar{
-		margin-top: 40px;
+		margin-top: 15px;
 	}
 
 	.image_menu{
 		margin: 18px 8px 4px 70px;
 		height: 34px;
+	}
+
+	#modal{
+		margin-top: 20px;
 	}
 
 	.titretopbar h1{
