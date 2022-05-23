@@ -94,21 +94,19 @@ body{
     background: #c7913c;
     padding: 20px 10px 20px 30px;
     position: fixed;
-    top: -800px;
+    top: -500px;
     left: 20px;
-	/* width: 80%; */
-	/* max-width: 800px; */
     transition: 0.5s;
 	display: flex;
 	flex-direction: column;
 }
 
 #close{
-    background-color: red;
+    background-color: #b63515;
     color: white;
     position: absolute;
-    bottom: 50px;
-    right: 0px;
+    bottom: 30px;
+    right: 2px;
 	width: 35px;
 	height: 35px;
 }
@@ -124,7 +122,7 @@ body{
 	text-align: left;
 }
 
-#modal li{
+#modal li a{
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -138,7 +136,7 @@ body{
 	text-decoration: none;
 	color: #fff;
 	letter-spacing: 1px;
-	 margin-left: 5px; */
+	margin-left: 5px;
 }
 
 #modal a:hover{
@@ -196,7 +194,6 @@ section div p{
 	letter-spacing: 1px;
     margin-bottom: 8px;
 }
-
 
 section div p:hover{
 	background-color: #fff;
@@ -500,7 +497,6 @@ footer{
 		grid-area: hautc;
 		order: 1;
 		margin-left: 11vw;
-		/* margin-top: 0%; */
 		margin-bottom: 30px;
 	}
 	
@@ -568,7 +564,6 @@ footer{
 		font-size: 1.2rem;
 		letter-spacing: 2px;
 	}
-	
 
 	.prestations{
 		margin-bottom: 20px;
@@ -701,7 +696,6 @@ footer{
 	.figcle{
 		padding: 10px;
 		margin-top: 6px;
-
 	}
 
 	.figpiad{
