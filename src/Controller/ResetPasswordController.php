@@ -51,7 +51,7 @@ class ResetPasswordController extends AbstractController
             );
         }
 
-        return $this->render('reset_password/request.html.twig', [
+        return $this->render('reset_password/request.html.twig', [ 'titrepage' => 'Demande Mot de passe - Facteur Accordeur Piano',
             'requestForm' => $form->createView(),
         ]);
     }
@@ -68,7 +68,7 @@ class ResetPasswordController extends AbstractController
             $resetToken = $this->resetPasswordHelper->generateFakeResetToken();
         }
 
-        return $this->render('reset_password/check_email.html.twig', [
+        return $this->render('reset_password/check_email.html.twig', [ 'titrepage' => 'Envoi Demande mot de passe - Facteur Accordeur Piano',
             'resetToken' => $resetToken,
         ]);
     }
@@ -127,7 +127,7 @@ class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        return $this->render('reset_password/reset.html.twig', [
+        return $this->render('reset_password/reset.html.twig', [ 'titrepage' => ' Changer Mot de passe- Facteur Accordeur Piano',
             'resetForm' => $form->createView(),
         ]);
     }
@@ -160,7 +160,7 @@ class ResetPasswordController extends AbstractController
         }
 
         $email = (new TemplatedEmail())
-            ->from(new Address('no-reply@company.com', 'company.com'))
+            ->from(new Address('ph.sedlacek@free.fr', 'company.com'))
             ->to($user->getEmail())
             ->subject('Your password reset request')
             ->htmlTemplate('reset_password/email.html.twig')

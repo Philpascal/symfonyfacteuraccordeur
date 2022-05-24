@@ -6,7 +6,7 @@
 
 .mainaccord{
     margin-top: 18vh;
-    margin-left: 4vw;
+     margin-left: 4vw;
     margin-right: 4vw;
     margin-bottom: 80px;
 }
@@ -44,6 +44,12 @@
     margin-bottom: 5vh;
     border-radius: 10px 100px / 120px;
     border: solid 3px #bfaa8c;
+}
+
+.mainaccordtouche{
+    width: 100%;
+    margin-top: +400px;
+    margin-left: -300px;
 }
 
 .tableautarif{
