@@ -26,9 +26,9 @@ class DevisType extends AbstractType
             ->add('rue', TextType::class, [
                  "label" => "Rue",
              ])
-            ->add('voie', TextType::class, [
-                "label" => "Voie",
-            ])
+            // ->add('voie', TextType::class, [
+            //     "label" => "Voie",
+            // ])
             ->add('codepostal', IntegerType::class, [
                 "label" => "Code postal",
             ])

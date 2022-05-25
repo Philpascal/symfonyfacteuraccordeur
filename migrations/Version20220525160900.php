@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220510181936 extends AbstractMigration
+final class Version20220525160900 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,13 +20,14 @@ final class Version20220510181936 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE produit (id INT AUTO_INCREMENT NOT NULL, posseder_id INT NOT NULL, ref VARCHAR(50) NOT NULL, marque VARCHAR(50) NOT NULL, photo VARCHAR(150) NOT NULL, INDEX IDX_29A5EC271DB77787 (posseder_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('ALTER TABLE produit ADD CONSTRAINT FK_29A5EC271DB77787 FOREIGN KEY (posseder_id) REFERENCES couleur (id)');
+        $this->addSql('ALTER TABLE devis DROP voie, CHANGE rue rue VARCHAR(30) NOT NULL');
+        $this->addSql('ALTER TABLE devis RENAME INDEX idx_8b27c52bf472fff5 TO IDX_8B27C52B994500F4');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE produit');
+        $this->addSql('ALTER TABLE devis ADD voie VARCHAR(50) NOT NULL, CHANGE rue rue VARCHAR(50) NOT NULL');
+        $this->addSql('ALTER TABLE devis RENAME INDEX idx_8b27c52b994500f4 TO IDX_8B27C52BF472FFF5');
     }
 }

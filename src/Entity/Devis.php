@@ -22,11 +22,11 @@ class Devis
     #[ORM\Column(type: 'integer')]
     private $numero;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $rue;
+    // #[ORM\Column(type: 'string', length: 30)]  /**length: 50 */
+    // private $rue;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $voie;
+    // #[ORM\Column(type: 'string', length: 50)]
+    // private $voie;
 
     #[ORM\Column(type: 'integer')]
     private $codepostal;
@@ -34,8 +34,8 @@ class Devis
     #[ORM\Column(type: 'string', length: 50)]
     private $ville;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $message;
+    // #[ORM\Column(type: 'string', length: 255)]
+    // private $message;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $photo;
@@ -46,6 +46,12 @@ class Devis
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'nom')]
     private $userrepondre;
+
+    #[ORM\Column(type: 'string', length: 30)]
+    private $rue;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $message;
 
     // public function __construct()
     // {
@@ -82,29 +88,29 @@ class Devis
         return $this;
     }
 
-    public function getRue(): ?string
-    {
-        return $this->rue;
-    }
+    // public function getRue(): ?string
+    // {
+    //     return $this->rue;
+    // }
 
-    public function setRue(string $rue): self
-    {
-        $this->rue = $rue;
+    // public function setRue(string $rue): self
+    // {
+    //     $this->rue = $rue;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
-    public function getVoie(): ?string
-    {
-        return $this->voie;
-    }
+    // public function getVoie(): ?string
+    // {
+    //     return $this->voie;
+    // }
 
-    public function setVoie(string $voie): self
-    {
-        $this->voie = $voie;
+    // public function setVoie(string $voie): self
+    // {
+    //     $this->voie = $voie;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getCodepostal(): ?int
     {
@@ -130,17 +136,17 @@ class Devis
         return $this;
     }
 
-    public function getMessage(): ?string
-    {
-        return $this->message;
-    }
+    // public function getMessage(): ?string
+    // {
+    //     return $this->message;
+    // }
 
-    public function setMessage(string $message): self
-    {
-        $this->message = $message;
+    // public function setMessage(string $message): self
+    // {
+    //     $this->message = $message;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getPhoto(): ?string
     {
@@ -174,6 +180,30 @@ class Devis
     public function setUserrepondre(?User $userrepondre): self
     {
         $this->userrepondre = $userrepondre;
+
+        return $this;
+    }
+
+    public function getRue(): ?string
+    {
+        return $this->rue;
+    }
+
+    public function setRue(string $rue): self
+    {
+        $this->rue = $rue;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }
