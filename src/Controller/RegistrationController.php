@@ -65,8 +65,8 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('registration/register.html.twig', [ 'titrepage' => 'Inscription - Facteur Accordeur Piano',
-            'registrationForm' => $form->createView(),
-        ]);
+             'registrationForm' => $form->createView(),
+         ]);
     }
 
     #[Route('/verify/email', name: 'app_verify_email')]

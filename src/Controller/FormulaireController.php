@@ -15,6 +15,8 @@ class FormulaireController extends AbstractController
     #[Route('/formulaire/add', name: 'app_formulaire')]
     public function formulaireadd(Request $request, ManagerRegistry $doctrine ): Response
     {
+        // dd($this->getUser().isVerified);
+        
         $devis = new Devis();
 
         $form = $this->createForm(DevisType::class, $devis);
