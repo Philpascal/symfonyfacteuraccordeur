@@ -143,6 +143,10 @@ body{
 	color: black;
 }
 
+.titretopbar a{
+	text-decoration: none;
+}
+
 .titretopbar h1{
 	font-family: 'Boogaloo', cursive;
 	color: #fff;

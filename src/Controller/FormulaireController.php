@@ -17,22 +17,48 @@ class FormulaireController extends AbstractController
     {
         // dd($this->getUser().isVerified);
         
-        $devis = new Devis();
+        if ($this->getUser()->isVerified()) {
+            
+            $devis = new Devis();
 
-        $form = $this->createForm(DevisType::class, $devis);
+            $form = $this->createForm(DevisType::class, $devis);
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+            $form->handleRequest($request);
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            $devis->setUser($this->getUser());
-            $em = $doctrine->getManager();
-            $em->persist($devis);
-            $em->flush();
-            return $this->redirectToRoute('home');
+                $devis->setUser($this->getUser());
+                $em = $doctrine->getManager();
+                $em->persist($devis);
+                $em->flush();
+                return $this->redirectToRoute('home');
+            }
         }
-
+        else {
+            return $this->redirectToRoute('page_contact');
+        }
         return $this->render('formulaire/index.html.twig', [ 'titrepage' => 'Formulaire - Facteur Accordeur Piano',
-            'form' => $form->createView(),
-        ]);
+                'form' => $form->createView(),
+            ]);
     }
+
+
+
+    //     $devis = new Devis();
+
+    //     $form = $this->createForm(DevisType::class, $devis);
+
+    //     $form->handleRequest($request);
+    //     if ($form->isSubmitted() && $form->isValid()) {
+
+    //         $devis->setUser($this->getUser());
+    //         $em = $doctrine->getManager();
+    //         $em->persist($devis);
+    //         $em->flush();
+    //         return $this->redirectToRoute('home');
+    //     }
+
+    //     return $this->render('formulaire/index.html.twig', [ 'titrepage' => 'Formulaire - Facteur Accordeur Piano',
+    //         'form' => $form->createView(),
+    //     ]);
+    // }
 }
