@@ -2,12 +2,9 @@
 
 namespace App\Entity;
 
-//use App\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
-//use Doctrine\Common\Collections\Collection;
 use App\Repository\DevisRepository;
-// use Doctrine\Common\Collections\ArrayCollection;
-
+use Gedmo\Mapping\Annotation as Gedmo;/************************date auto************* */
 #[ORM\Entity(repositoryClass: DevisRepository::class)]
 class Devis
 {
@@ -15,18 +12,15 @@ class Devis
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;
-
-    #[ORM\Column(type: 'datetime')]
+    /*date auto*******************************************************************************/
+    /**
+     * @Gedmo\Timestampable(on="create")
+     */
+    #[ORM\Column(type: 'datetime_immutable')]/************date auto*************************** */
     private $date;
             
     #[ORM\Column(type: 'integer')]
     private $numero;
-
-    // #[ORM\Column(type: 'string', length: 30)]  /**length: 50 */
-    // private $rue;
-
-    // #[ORM\Column(type: 'string', length: 50)]
-    // private $voie;
 
     #[ORM\Column(type: 'integer')]
     private $codepostal;
@@ -34,14 +28,11 @@ class Devis
     #[ORM\Column(type: 'string', length: 50)]
     private $ville;
 
-    // #[ORM\Column(type: 'string', length: 255)]
-    // private $message;
-
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $photo;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'devis')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private $user;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'nom')]
@@ -53,28 +44,27 @@ class Devis
     #[ORM\Column(type: 'string', length: 255)]
     private $message;
 
-    // public function __construct()
-    // {
-    //     $this->user = new ArrayCollection();
-    // }
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $reponse;
+
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]/****************************************date auto */
+    private $datereponse;
 
     public function getId(): ?int
     {
         return $this->id;
     }
-
-    public function getDate(): ?\DateTimeInterface
+    
+    public function getDate(): ?\DateTimeImmutable/*************************************date auto */
     {
         return $this->date;
     }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
+/*******************************************date auto****************************************************** */
+    // public function setDate(\DateTimeInterface $date): self
+    // {
+    //     $this->date = $date;
+    //     return $this;
+    // }
             
     public function getNumero(): ?int
     {
@@ -84,33 +74,8 @@ class Devis
     public function setNumero(int $numero): self
     {
         $this->numero = $numero;
-
         return $this;
     }
-
-    // public function getRue(): ?string
-    // {
-    //     return $this->rue;
-    // }
-
-    // public function setRue(string $rue): self
-    // {
-    //     $this->rue = $rue;
-
-    //     return $this;
-    // }
-
-    // public function getVoie(): ?string
-    // {
-    //     return $this->voie;
-    // }
-
-    // public function setVoie(string $voie): self
-    // {
-    //     $this->voie = $voie;
-
-    //     return $this;
-    // }
 
     public function getCodepostal(): ?int
     {
@@ -120,7 +85,6 @@ class Devis
     public function setCodepostal(int $codepostal): self
     {
         $this->codepostal = $codepostal;
-
         return $this;
     }
 
@@ -132,21 +96,8 @@ class Devis
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
-
         return $this;
     }
-
-    // public function getMessage(): ?string
-    // {
-    //     return $this->message;
-    // }
-
-    // public function setMessage(string $message): self
-    // {
-    //     $this->message = $message;
-
-    //     return $this;
-    // }
 
     public function getPhoto(): ?string
     {
@@ -156,7 +107,6 @@ class Devis
     public function setPhoto(?string $photo): self
     {
         $this->photo = $photo;
-
         return $this;
     }
 
@@ -168,7 +118,6 @@ class Devis
     public function setUser(?User $user): self
     {   
         $this->user = $user;
-
         return $this;
     }
 
@@ -180,7 +129,6 @@ class Devis
     public function setUserrepondre(?User $userrepondre): self
     {
         $this->userrepondre = $userrepondre;
-
         return $this;
     }
 
@@ -192,7 +140,6 @@ class Devis
     public function setRue(string $rue): self
     {
         $this->rue = $rue;
-
         return $this;
     }
 
@@ -204,7 +151,28 @@ class Devis
     public function setMessage(string $message): self
     {
         $this->message = $message;
+        return $this;
+    }
 
+    public function getReponse(): ?string
+    {
+        return $this->reponse;
+    }
+
+    public function setReponse(?string $reponse): self
+    {
+        $this->reponse = $reponse;
+        return $this;
+    }
+
+    public function getDatereponse(): ?\DateTimeImmutable/*************************************date auto */
+    {
+        return $this->datereponse;
+    }
+
+    public function setDatereponse(?\DateTimeImmutable $datereponse): self/**************************************date auto */
+    {
+        $this->datereponse = $datereponse;
         return $this;
     }
 }

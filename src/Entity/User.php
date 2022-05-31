@@ -48,6 +48,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->devis = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->prenom . ' ' . $this->nom;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -61,7 +66,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -91,14 +95,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
-
         return array_unique($roles);
     }
 
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
-
         return $this;
     }
 
@@ -113,7 +115,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
         return $this;
     }
 
@@ -145,7 +146,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
-
         return $this;
     }
 
@@ -163,7 +163,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             $this->devis[] = $devi;
             $devi->setUser($this);
         }
-
         return $this;
     }
 
@@ -175,7 +174,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $devi->setUser(null);
             }
         }
-
         return $this;
     }
 
@@ -187,7 +185,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setPrenom(string $prenom): self
     {
         $this->prenom = $prenom;
-
         return $this;
     }
 
@@ -199,7 +196,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTel(string $tel): self
     {
         $this->tel = $tel;
-
         return $this;
     }
 
@@ -211,7 +207,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
-
         return $this;
     }
 }
