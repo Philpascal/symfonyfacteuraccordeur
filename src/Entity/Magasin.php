@@ -13,100 +13,98 @@ class Magasin
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 150)]
-    private $nom_mag;
+    #[ORM\Column(type: 'string', length: 50)]
+    private $nom;
 
     #[ORM\Column(type: 'integer')]
-    private $numero_mag;
+    private $numero;
+
+    #[ORM\Column(type: 'string', length: 30)]
+    private $rue;
+
+    // #[ORM\Column(type: 'string', length: 50)]
+    // private $voie_mag;
+
+    #[ORM\Column(type: 'integer')]
+    private $codepostal;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $rue_mag;
+    private $ville;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $voie_mag;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $code_postal_mag;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private $ville_mag;
+    public function __toString()
+    {
+        return $this->nom . ' ' . $this->numero . ' ' . $this->rue . ' ' . $this->codepostal . ' ' . $this->ville;
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNomMag(): ?string
+    public function getNom(): ?string
     {
-        return $this->nom_mag;
+        return $this->nom;
     }
 
-    public function setNomMag(string $nom_mag): self
+    public function setNom(string $nom): self
     {
-        $this->nom_mag = $nom_mag;
-
+        $this->nom = $nom;
         return $this;
     }
 
-    public function getNumeroMag(): ?int
+    public function getNumero(): ?int
     {
-        return $this->numero_mag;
+        return $this->numero;
     }
 
-    public function setNumeroMag(int $numero_mag): self
+    public function setNumero(int $numero): self
     {
-        $this->numero_mag = $numero_mag;
-
+        $this->numero = $numero;
         return $this;
     }
 
-    public function getRueMag(): ?string
+    public function getRue(): ?string
     {
-        return $this->rue_mag;
+        return $this->rue;
     }
 
-    public function setRueMag(string $rue_mag): self
+    public function setRue(string $rue): self
     {
-        $this->rue_mag = $rue_mag;
-
+        $this->rue = $rue;
         return $this;
     }
 
-    public function getVoieMag(): ?string
+    // public function getVoieMag(): ?string
+    // {
+    //     return $this->voie_mag;
+    // }
+
+    // public function setVoieMag(string $voie_mag): self
+    // {
+    //     $this->voie_mag = $voie_mag;
+
+    //     return $this;
+    // }
+
+    public function getCodePostal(): ?int
     {
-        return $this->voie_mag;
+        return $this->codepostal;
     }
 
-    public function setVoieMag(string $voie_mag): self
+    public function setCodePostal(string $codepostal): self
     {
-        $this->voie_mag = $voie_mag;
-
+        $this->codepostal = $codepostal;
         return $this;
     }
 
-    public function getCodePostalMag(): ?string
+    public function getVille(): ?string
     {
-        return $this->code_postal_mag;
+        return $this->ville;
     }
 
-    public function setCodePostalMag(string $code_postal_mag): self
+    public function setVille(string $ville): self
     {
-        $this->code_postal_mag = $code_postal_mag;
-
+        $this->ville = $ville;
         return $this;
     }
-
-    public function getVilleMag(): ?string
-    {
-        return $this->ville_mag;
-    }
-
-    public function setVilleMag(string $ville_mag): self
-    {
-        $this->ville_mag = $ville_mag;
-
-        return $this;
-    }
-
-    
 }

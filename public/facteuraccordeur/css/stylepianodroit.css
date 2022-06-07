@@ -1,0 +1,21 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items:center;
+}
+
+.mainpianodroit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table, td{
+    border: 2px solid #c7913c;
+    margin-bottom: 10px;
+}
+
+.mainpianodroit img{
+width: 50px;
+margin: 10px;
+}

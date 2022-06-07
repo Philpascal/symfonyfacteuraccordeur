@@ -63,4 +63,12 @@ class PageController extends AbstractController
             'titrepage' => 'Zone Intervention - Facteur Accordeur Piano',
         ]);
     }
+
+    #[Route('/pianodroit', name: 'page_pianodroit')]
+    public function indexpianodroit(): Response
+    {
+        return $this->render('page/pianodroit.html.twig', [
+            'titrepage' => 'Présentation Pianos Droits - Facteur Accordeur Piano',
+        ]);
+    }    
 }

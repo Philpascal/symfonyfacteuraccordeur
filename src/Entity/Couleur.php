@@ -16,6 +16,11 @@ class Couleur
     #[ORM\Column(type: 'string', length: 50)]
     private $couleur;
 
+    public function __toString()
+    {
+        return $this->couleur;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

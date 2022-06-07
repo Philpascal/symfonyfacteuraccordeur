@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProduitRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Marque;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProduitRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
 class Produit
@@ -18,8 +19,8 @@ class Produit
     #[ORM\Column(type: 'string', length: 50)]
     private $ref;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $marque;
+    // #[ORM\Column(type: 'string', length: 50)]
+    // private $marque;
 
     #[ORM\Column(type: 'string', length: 150)]
     private $photo;
@@ -35,6 +36,17 @@ class Produit
     #[ORM\ManyToMany(targetEntity: Magasin::class)]
     private $etre_disponible;
 
+    #[ORM\ManyToOne(targetEntity: Type::class, inversedBy: 'avoir')]
+    private $type;
+
+    #[ORM\Column(type: 'string', length: 10)]
+    private $prix;
+
+    #[ORM\ManyToOne(targetEntity: marque::class, inversedBy: 'appeler')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $appeler;
+
+    
     public function __construct()
     {
         $this->etre_disponible = new ArrayCollection();
@@ -53,18 +65,6 @@ class Produit
     public function setRef(string $ref): self
     {
         $this->ref = $ref;
-
-        return $this;
-    }
-
-    public function getMarque(): ?string
-    {
-        return $this->marque;
-    }
-
-    public function setMarque(string $marque): self
-    {
-        $this->marque = $marque;
 
         return $this;
     }
@@ -128,4 +128,41 @@ class Produit
 
         return $this;
     }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    public function getPrix(): ?string
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(string $prix): self
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getAppeler(): ?marque
+    {
+        return $this->appeler;
+    }
+
+    public function setAppeler(?marque $appeler): self
+    {
+        $this->appeler = $appeler;
+
+        return $this;
+    }
+
 }
