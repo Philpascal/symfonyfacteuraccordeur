@@ -1,39 +1,51 @@
 {% extends 'faadmin.html.twig' %}
 
 {% block body %}
-    <h1>Produit index</h1>
+    <div class="card-body">
+        <h1>La liste des sélections</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Ref</th>
-                <th>Marque</th>
-                <th>Photo</th>
-                <th>Prix</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for produit in produits %}
-            <tr>
-                <td>{{ produit.id }}</td>
-                <td>{{ produit.ref }}</td>
-                <td>{{ produit.appeler }}</td>
-                <td>{{ produit.photo }}</td>
-                <td>{{ produit.prix }}</td>
-                <td>
-                    <a href="{{ path('app_selection_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('app_selection_edit', {'id': produit.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table" id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Marque</th>
+                    <th>Couleur</th>
+                    <th>Forme</th>
+                    <th>Ref</th>
+                    <th>Prix</th>
+                    <th>Magasin</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.photo }}</td>
+                    <td>{{ produit.marque }}</td>
+                    <td>{{ produit.couleur }}</td>
+                    <td>{{ produit.type }}</td>
+                    <td>{{ produit.ref }}</td>
+                    <td>{{ produit.prix }}</td>
+                    {# <td>{{ dump(produit.magasins) }}</td> #}
+                    {# une deuxième boucle car 2 id ds la même entity  #}
+                    <td>
+                    {% for magasin in produit.magasins %}
+                        {{ magasin.nom }}
+                    {% endfor %}
+                    </td>
+                    <td>
+                        <a href="{{ path('app_selection_show', {'id': produit.id}) }}" class="btn btn-danger m-1">Supprimer</a>
+                        <a href="{{ path('app_selection_edit', {'id': produit.id}) }}" class="btn btn-primary m-1">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_selection_new') }}">Create new</a>
+        <a href="{{ path('app_selection_new') }}" class="btn btn-success">Nouvelle sélection</a>
+    </div>
 {% endblock %}

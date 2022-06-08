@@ -1,35 +1,35 @@
 {% extends 'faadmin.html.twig' %}
 
-{% block title %}Type index{% endblock %}
-
 {% block body %}
-    <h1>Type index</h1>
+    <div class="card-body">
+        <h1>Liste des formes</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Forme</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for type in types %}
-            <tr>
-                <td>{{ type.id }}</td>
-                <td>{{ type.forme }}</td>
-                <td>
-                    <a href="{{ path('app_type_show', {'id': type.id}) }}">show</a>
-                    <a href="{{ path('app_type_edit', {'id': type.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table" id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Forme</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for type in types %}
+                <tr>
+                    <td>{{ type.id }}</td>
+                    <td>{{ type.forme }}</td>
+                    <td>
+                        <a href="{{ path('app_type_show', {'id': type.id}) }}" class="btn btn-danger m-1">Supprimer</a>
+                        <a href="{{ path('app_type_edit', {'id': type.id}) }}" class="btn btn-primary m-1">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_type_new') }}">Create new</a>
+        <a href="{{ path('app_type_new') }}" class="btn btn-success m-1 col-2">Créer une nouvelle forme</a>
+    </div>
 {% endblock %}

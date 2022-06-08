@@ -15,34 +15,19 @@
                 <th>Marque</th>
                 <th>Réfence</th>
                 <th>Prix</th>
+                <th>Magasin</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr >
-                <td><img src="{{ asset('facteuraccordeur/images/piano1.png') }}"></td>
-                <td>BECHSTEIN</td>
-                <td>C. Bechstein D282 Vario</td>
-                <td>143 123 €</td>
-            </tr>
-            <tr >
-                <td><img src="{{ asset('facteuraccordeur/images/piano3.png') }}"></td>
-                <td>KAWAY</td>
-                <td>Piano à queue Kawai Shigeru SKEXL Noir laqué</td>
-                <td>183 100 €</td>
-            </tr>
-            <tr >
-                <td><img src="{{ asset('facteuraccordeur/images/piano1.png') }}"></td>
-                <td>BECHSTEIN</td>
-                <td>C. Bechstein D282 Vario</td>
-                <td>143 123 €</td>
-            </tr>
-            <tr >
-                <td><img src="{{ asset('facteuraccordeur/images/piano3.png') }}"></td>
-                <td>KAWAY</td>
-                <td>Piano à queue Kawai Shigeru SKEXL Noir laqué</td>
-                <td>183 100 €</td>
-            </tr>
+            {# {% for produit in produits %}
+                <tr >
+                    <td><img src="{{ asset('facteuraccordeur/images/piano1.png') }}"></td>
+                    <td>{{ produit.marque }}</td>
+                    <td>{{ produit.ref }}</td>
+                    <td>{{ produit.prix }}</td>
+                </tr>
+            {% endfor %} #}
         </tbody>
             
         <tfoot>

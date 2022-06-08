@@ -1,35 +1,35 @@
 {% extends 'faadmin.html.twig' %}
 
-{% block title %}Couleur index{% endblock %}
-
 {% block body %}
-    <h1>Couleur index</h1>
+    <div class="card-body">
+        <h1>Liste des couleurs</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Couleur</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for couleur in couleurs %}
-            <tr>
-                <td>{{ couleur.id }}</td>
-                <td>{{ couleur.couleur }}</td>
-                <td>
-                    <a href="{{ path('app_couleur_show', {'id': couleur.id}) }}">show</a>
-                    <a href="{{ path('app_couleur_edit', {'id': couleur.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table" id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Couleur</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for couleur in couleurs %}
+                <tr>
+                    <td>{{ couleur.id }}</td>
+                    <td>{{ couleur.codecouleur }}</td>
+                    <td>
+                        <a href="{{ path('app_couleur_show', {'id': couleur.id}) }}" class="btn btn-danger m-1">Supprimer</a>
+                        <a href="{{ path('app_couleur_edit', {'id': couleur.id}) }}" class="btn btn-primary m-1">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_couleur_new') }}">Create new</a>
+        <a href="{{ path('app_couleur_new') }}" class="btn btn-success m-1">Créer une nouvelle couleur</a>
+    </div>
 {% endblock %}

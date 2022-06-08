@@ -18,13 +18,12 @@ class Marque
     #[ORM\Column(type: 'string', length: 50)]
     private $nom;
 
-    #[ORM\OneToMany(mappedBy: 'appeler', targetEntity: Produit::class)]
-    private $appeler;
+    #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Produit::class)]
+    private $produits;
 
-    
     public function __construct()
     {
-        $this->appeler = new ArrayCollection();
+        $this->produits = new ArrayCollection();
     }
 
     public function __toString()
@@ -52,32 +51,30 @@ class Marque
     /**
      * @return Collection<int, Produit>
      */
-    public function getAppeler(): Collection
+    public function getProduits(): Collection
     {
-        return $this->appeler;
+        return $this->produits;
     }
 
-    public function addAppeler(Produit $appeler): self
+    public function addProduit(Produit $produit): self
     {
-        if (!$this->appeler->contains($appeler)) {
-            $this->appeler[] = $appeler;
-            $appeler->setAppeler($this);
+        if (!$this->produits->contains($produit)) {
+            $this->produits[] = $produit;
+            $produit->setMarque($this);
         }
 
         return $this;
     }
 
-    public function removeAppeler(Produit $appeler): self
+    public function removeProduit(Produit $produit): self
     {
-        if ($this->appeler->removeElement($appeler)) {
+        if ($this->produits->removeElement($produit)) {
             // set the owning side to null (unless already changed)
-            if ($appeler->getAppeler() === $this) {
-                $appeler->setAppeler(null);
+            if ($produit->getMarque() === $this) {
+                $produit->setMarque(null);
             }
         }
 
         return $this;
     }
-
-   
 }

@@ -2,11 +2,10 @@
 
 namespace App\Entity;
 
-use App\Entity\Marque;
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProduitRepository;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
 class Produit
@@ -16,57 +15,39 @@ class Produit
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 50)]
-    private $ref;
-
-    // #[ORM\Column(type: 'string', length: 50)]
-    // private $marque;
-
-    #[ORM\Column(type: 'string', length: 150)]
+    #[ORM\Column(type: 'string', length: 500)]
     private $photo;
 
-    #[ORM\ManyToOne(targetEntity: Couleur::class)]
-    #[ORM\JoinColumn(nullable: false)]
-    private $posseder;
-
-    #[ORM\ManyToOne(targetEntity: User::class)]
-    #[ORM\JoinColumn(nullable: false)]
-    private $enregistrer;
-
-    #[ORM\ManyToMany(targetEntity: Magasin::class)]
-    private $etre_disponible;
-
-    #[ORM\ManyToOne(targetEntity: Type::class, inversedBy: 'avoir')]
-    private $type;
+    #[ORM\Column(type: 'string', length: 50)]
+    private $ref;
 
     #[ORM\Column(type: 'string', length: 10)]
     private $prix;
 
-    #[ORM\ManyToOne(targetEntity: marque::class, inversedBy: 'appeler')]
+    #[ORM\ManyToOne(targetEntity: Marque::class, inversedBy: 'produits')]
     #[ORM\JoinColumn(nullable: false)]
-    private $appeler;
+    private $marque;
 
-    
+    #[ORM\ManyToOne(targetEntity: Couleur::class, inversedBy: 'produits')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $couleur;
+
+    #[ORM\ManyToOne(targetEntity: Type::class, inversedBy: 'produits')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $type;
+/*************pour la collection magasin, 2 id dans l'entity, pour aller chercher l'attribut, mettre des s*/
+/******************le produit pointe vers le magasin************************************* */
+    #[ORM\ManyToMany(targetEntity: Magasin::class, inversedBy: 'produits')]
+    private $magasins;
+
     public function __construct()
     {
-        $this->etre_disponible = new ArrayCollection();
+        $this->magasins = new ArrayCollection();
     }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getRef(): ?string
-    {
-        return $this->ref;
-    }
-
-    public function setRef(string $ref): self
-    {
-        $this->ref = $ref;
-
-        return $this;
     }
 
     public function getPhoto(): ?string
@@ -81,62 +62,14 @@ class Produit
         return $this;
     }
 
-    public function getPosseder(): ?Couleur
+    public function getRef(): ?string
     {
-        return $this->posseder;
+        return $this->ref;
     }
 
-    public function setPosseder(?Couleur $posseder): self
+    public function setRef(string $ref): self
     {
-        $this->posseder = $posseder;
-
-        return $this;
-    }
-
-    public function getEnregistrer(): ?User
-    {
-        return $this->enregistrer;
-    }
-
-    public function setEnregistrer(?User $enregistrer): self
-    {
-        $this->enregistrer = $enregistrer;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Magasin>
-     */
-    public function getEtreDisponible(): Collection
-    {
-        return $this->etre_disponible;
-    }
-
-    public function addEtreDisponible(Magasin $etreDisponible): self
-    {
-        if (!$this->etre_disponible->contains($etreDisponible)) {
-            $this->etre_disponible[] = $etreDisponible;
-        }
-
-        return $this;
-    }
-
-    public function removeEtreDisponible(Magasin $etreDisponible): self
-    {
-        $this->etre_disponible->removeElement($etreDisponible);
-
-        return $this;
-    }
-
-    public function getType(): ?Type
-    {
-        return $this->type;
-    }
-
-    public function setType(?Type $type): self
-    {
-        $this->type = $type;
+        $this->ref = $ref;
 
         return $this;
     }
@@ -153,16 +86,64 @@ class Produit
         return $this;
     }
 
-    public function getAppeler(): ?marque
+    public function getMarque(): ?Marque
     {
-        return $this->appeler;
+        return $this->marque;
     }
 
-    public function setAppeler(?marque $appeler): self
+    public function setMarque(?Marque $marque): self
     {
-        $this->appeler = $appeler;
+        $this->marque = $marque;
 
         return $this;
     }
 
+    public function getCouleur(): ?Couleur
+    {
+        return $this->couleur;
+    }
+
+    public function setCouleur(?Couleur $couleur): self
+    {
+        $this->couleur = $couleur;
+
+        return $this;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+/*************pour la collection magasin, 2 id dans l'entity, pour aller chercher l'attribut, mettre des s*/
+
+    /**
+     * @return Collection<int, Magasin>
+     */
+    public function getMagasins(): Collection
+    {
+        return $this->magasins;
+    }
+
+    public function addMagasin(Magasin $magasin): self
+    {
+        if (!$this->magasins->contains($magasin)) {
+            $this->magasins[] = $magasin;
+        }
+
+        return $this;
+    }
+
+    public function removeMagasin(Magasin $magasin): self
+    {
+        $this->magasins->removeElement($magasin);
+
+        return $this;
+    }
 }
