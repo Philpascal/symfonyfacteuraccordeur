@@ -7,7 +7,7 @@
         <table class="table" id="datatablesSimple">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    {# <th>Id</th> #}
                     <th>Forme</th>
                     <th>actions</th>
                 </tr>
@@ -15,7 +15,7 @@
             <tbody>
             {% for type in types %}
                 <tr>
-                    <td>{{ type.id }}</td>
+                    {# <td>{{ type.id }}</td> #}
                     <td>{{ type.forme }}</td>
                     <td>
                         <a href="{{ path('app_type_show', {'id': type.id}) }}" class="btn btn-danger m-1">Supprimer</a>

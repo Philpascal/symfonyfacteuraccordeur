@@ -12,15 +12,17 @@
                     <th>Couleur</th>
                     <th>Forme</th>
                     <th>Ref</th>
-                    <th>Prix</th>
-                    <th>Magasin</th>
+                    <th>Prix en €</th>
+                    <th>Adresse magasin</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for produit in produits %}
                 <tr>
-                    <td>{{ produit.photo }}</td>
+                    <td>
+                    <img src="{{app_cdn}}{{produit.photo}}" alt="#" width="100">
+                    </td>
                     <td>{{ produit.marque }}</td>
                     <td>{{ produit.couleur }}</td>
                     <td>{{ produit.type }}</td>
@@ -30,7 +32,7 @@
                     {# une deuxième boucle car 2 id ds la même entity  #}
                     <td>
                     {% for magasin in produit.magasins %}
-                        {{ magasin.nom }}
+                        {{ magasin.nom }} <br> {{ magasin.numero }} {{ magasin.voie }} <br> {{ magasin.codepostal }} {{ magasin.ville }}
                     {% endfor %}
                     </td>
                     <td>

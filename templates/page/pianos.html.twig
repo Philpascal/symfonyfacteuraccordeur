@@ -20,25 +20,23 @@
         </thead>
 
         <tbody>
-            {# {% for produit in produits %}
+            {% for produit in produits %}
                 <tr >
-                    <td><img src="{{ asset('facteuraccordeur/images/piano1.png') }}"></td>
+                    <td>
+                        <img src="{{ app_cdn }}{{ produit.photo }}" alt="#" width="100">
+                    </td>
                     <td>{{ produit.marque }}</td>
                     <td>{{ produit.ref }}</td>
                     <td>{{ produit.prix }}</td>
+                    <td>
+                        {% for magasin in produit.magasins %}
+                        {{ magasin.nom }} <br> {{ magasin.numero }} {{ magasin.voie }} <br> {{ magasin.codepostal }} {{ magasin.ville }}
+                        {% endfor %}
+                    </td>
                 </tr>
-            {% endfor %} #}
+            {% endfor %}
         </tbody>
-            
-        <tfoot>
-            <tr>
-                <td>M</td>
-                <td>M</td>
-                <td>M</td>
-                <td>M</td>
-            </tr>
-        </tfoot>
-
+        
     </table>
     
 </main>

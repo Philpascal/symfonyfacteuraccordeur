@@ -14,7 +14,7 @@ class MagasinType extends AbstractType
         $builder
             ->add('nom')
             ->add('numero')
-            ->add('rue')
+            ->add('voie')
             ->add('codepostal')
             ->add('ville')
         ;

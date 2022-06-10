@@ -7,7 +7,7 @@
         <table class="table" id="datatablesSimple">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    {# <th>Id</th> #}
                     <th>Couleur</th>
                     <th>actions</th>
                 </tr>
@@ -15,7 +15,7 @@
             <tbody>
             {% for couleur in couleurs %}
                 <tr>
-                    <td>{{ couleur.id }}</td>
+                    {# <td>{{ couleur.id }}</td> #}
                     <td>{{ couleur.codecouleur }}</td>
                     <td>
                         <a href="{{ path('app_couleur_show', {'id': couleur.id}) }}" class="btn btn-danger m-1">Supprimer</a>

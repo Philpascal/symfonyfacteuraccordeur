@@ -22,7 +22,7 @@ class Magasin
     private $numero;
 
     #[ORM\Column(type: 'string', length: 30)]
-    private $rue;
+    private $voie;
 
     #[ORM\Column(type: 'integer')]
     private $codepostal;
@@ -41,7 +41,7 @@ class Magasin
 
     public function __toString()
     {
-        return $this->nom;
+        return $this->nom . ' ' . $this->numero . ' ' . $this->voie . ' ' . $this->codepostal . ' ' . $this->ville;
     }
 
     public function getId(): ?int
@@ -73,14 +73,14 @@ class Magasin
         return $this;
     }
 
-    public function getRue(): ?string
+    public function getVoie(): ?string
     {
-        return $this->rue;
+        return $this->voie;
     }
 
-    public function setRue(string $rue): self
+    public function setVoie(string $voie): self
     {
-        $this->rue = $rue;
+        $this->voie = $voie;
 
         return $this;
     }

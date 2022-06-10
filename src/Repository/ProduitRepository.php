@@ -39,20 +39,41 @@ class ProduitRepository extends ServiceEntityRepository
         }
     }
 
+    public function pianodroit()
+    {
+        return $this->createQueryBuilder('p')
+            ->Where('p.type = 2')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function pianoaqueue()
+    {
+        return $this->createQueryBuilder('p')
+            ->Where('p.type = 1')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    
+
 //    /**
 //     * @return Produit[] Returns an array of Produit objects
 //     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
+//     public function findByExampleField($value): array
+//     {
+//         return $this->createQueryBuilder('p')
+//             ->andWhere('p.exampleField = :val')
+//             ->setParameter('val', $value)
+//             ->orderBy('p.id', 'ASC')
+//             ->setMaxResults(10)
+//             ->getQuery()
+//             ->getResult()
+//          ;
+//      }
+
 
 //    public function findOneBySomeField($value): ?Produit
 //    {

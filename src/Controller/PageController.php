@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\TypeRepository;
+//use App\Repository\ProduitRepository;
+use App\Repository\ProduitRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PageController extends AbstractController
 {
@@ -65,10 +68,24 @@ class PageController extends AbstractController
     }
 
     #[Route('/pianodroit', name: 'page_pianodroit')]
-    public function indexpianodroit(): Response
+    public function pianodroit(ProduitRepository $produitRepository): Response
     {
-        return $this->render('page/pianodroit.html.twig', [
+        $produits = $produitRepository->pianodroit();
+
+        return $this->render('page/pianos.html.twig', [
             'titrepage' => 'Présentation Pianos Droits - Facteur Accordeur Piano',
+            'produits' => $produits,
         ]);
-    }    
+    }
+    
+    #[Route('/pianoaqueue', name: 'page_pianoaqueue')]
+    public function pianoaqueue(ProduitRepository $produitRepository): Response
+    {
+        $produits = $produitRepository->pianoaqueue();
+
+        return $this->render('page/pianos.html.twig', [
+            'titrepage' => 'Présentation Pianos à Queues - Facteur Accordeur Piano',
+            'produits' => $produits,
+        ]);
+    }
 }
