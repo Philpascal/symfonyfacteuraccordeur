@@ -1,0 +1,11 @@
+{% extends 'faadmin.html.twig' %}
+
+{% block body %}
+    <div class="card-body">
+        <h1>Créer une nouvelle page d'accueil</h1>
+
+        {{ include('photoaccueil/_form.html.twig') }}
+
+        <a href="{{ path('app_photoaccueil_index') }}" class="btn btn-primary m-1 col-2">Retour à la liste</a>
+</div>
+{% endblock %}

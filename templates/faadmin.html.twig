@@ -61,17 +61,14 @@
                                 BACK-OFFICE
                             </a>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDevis" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Gestion des devis
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Gestion Page Accueil
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseDevis" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">Devis reçus</a>
-                                    <a class="nav-link" href="#">Devis répondu</a>
-                                    <a class="nav-link" href="#">Travaux réalisés</a>
-                                    <a class="nav-link" href="#">Relances devis</a>
+                                    <a class="nav-link" href="{{ path('app_photoaccueil_index') }}">Les images</a>
                                 </nav>
                             </div>
 
@@ -91,29 +88,29 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="{{ path('app_marque_index') }}">Marque</a>
-                                            <a class="nav-link" href="{{ path('app_type_index') }}">Forme</a>
-                                            <a class="nav-link" href="{{ path('app_couleur_index') }}">Couleur</a>
-                                            <a class="nav-link" href="{{ path('app_magasin_index') }}">Magasin</a>
+                                            <a class="nav-link" href="{{ path('app_marque_index') }}">Les marques</a>
+                                            <a class="nav-link" href="{{ path('app_type_index') }}">Les formes</a>
+                                            <a class="nav-link" href="{{ path('app_couleur_index') }}">Les couleurs</a>
+                                            <a class="nav-link" href="{{ path('app_magasin_index') }}">Les magasins</a>
 
                                         </nav>
                                     </div>
                                 </nav>
                             </div>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Page
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDevis" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Gestion des devis
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseDevis" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">Liste des selections</a>
-                                    <a class="nav-link" href="#">Création d'une sélection</a>
-                                    <a class="nav-link" href="#">Changer les images</a>
+                                    <a class="nav-link" href="#">Devis reçus</a>
+                                    <a class="nav-link" href="#">Devis répondu</a>
+                                    <a class="nav-link" href="#">Travaux réalisés</a>
+                                    <a class="nav-link" href="#">Relances devis</a>
                                 </nav>
                             </div>
-
                             
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

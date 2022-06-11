@@ -1,0 +1,56 @@
+{% extends 'faadmin.html.twig' %}
+
+{% block body %}
+    <div class="card-body">
+        <h1>Images & Vidéo de la page d'accueil</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Carrouselp</th>
+                    <th>Carrouseld</th>
+                    <th>Carrouselt</th>
+                    <th>Carrouselq</th>
+                    <th>Carrouselc</th>
+                    <th>Note</th>
+                    <th>Prestation</th>
+                    <th>Pianod</th>
+                    <th>Pianoaq</th>
+                    <th>Diapason</th>
+                    <th>Accessoir</th>
+                    <th>Clef</th>
+                    <th>Vidéo</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for photoaccueil in photoaccueils %}
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselp}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouseld}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselt}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselq}}" alt="#" width="80"></td>    
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselc}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.note}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.prestation}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.pianod}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.pianoaq}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.diapason}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.accessoir}}" alt="#" width="80"></td>
+                    <td><img src="{{app_cdn}}{{photoaccueil.clef}}" alt="#" width="80"></td>
+                    <td>{{ photoaccueil.video }}</td>
+                    <td>
+                        <a href="{{ path('app_photoaccueil_edit', {'id': photoaccueil.id}) }}" class="btn btn-primary m-1">Modifier</a>
+                    </td>
+                </tr>
+                
+            {% else %}
+                <tr>
+                    <td colspan="14">no records found</td>
+                </tr>
+            {% endfor %}
+            
+            </tbody>
+        </table>
+        
+    </div>
+{% endblock %}

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\TypeRepository;
 //use App\Repository\ProduitRepository;
 use App\Repository\ProduitRepository;
+use App\Repository\PhotoaccueilRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,10 +13,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PageController extends AbstractController
 {
     #[Route('/', name: 'home')]
-    public function indexhome(): Response
+    public function indexhome(PhotoaccueilRepository $photoaccueilRepository): Response
     {
+        $photoaccueils = $photoaccueilRepository->findAll();
+        
         return $this->render('page/home.html.twig', [
             'titrepage' => 'Antoine BERTHIER - Facteur Accordeur Piano',
+            'photoaccueils' => $photoaccueils,
         ]);
     }
 

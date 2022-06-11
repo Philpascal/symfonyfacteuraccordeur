@@ -7,19 +7,17 @@
         <table class="table" id="datatablesSimple">
             <thead>
                 <tr>
-                    {# <th>Id</th> #}
                     <th>Nom</th>
                     <th>Numero</th>
                     <th>Voie</th>
                     <th>Codepostal</th>
                     <th>Ville</th>
-                    <th>actions</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for magasin in magasins %}
                 <tr>
-                    {# <td>{{ magasin.id }}</td> #}
                     <td>{{ magasin.nom }}</td>
                     <td>{{ magasin.numero }}</td>
                     <td>{{ magasin.voie }}</td>

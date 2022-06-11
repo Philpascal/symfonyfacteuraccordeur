@@ -1,0 +1,66 @@
+{% extends 'faadmin.html.twig' %}
+
+{% block body %}
+    <div class="card-body">
+        <h1>Supprimer la page d'accueil</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Carrouselp</th>
+                    <td>{{ photoaccueil.carrouselp }}</td>
+                </tr>
+                <tr>
+                    <th>Carrouseld</th>
+                    <td>{{ photoaccueil.carrouseld }}</td>
+                </tr>
+                <tr>
+                    <th>Carrouselt</th>
+                    <td>{{ photoaccueil.carrouselt }}</td>
+                </tr>
+                <tr>
+                    <th>Carrouselq</th>
+                    <td>{{ photoaccueil.carrouselq }}</td>
+                </tr>
+                <tr>
+                    <th>Carrouselc</th>
+                    <td>{{ photoaccueil.carrouselc }}</td>
+                </tr>
+                <tr>
+                    <th>Prestation</th>
+                    <td>{{ photoaccueil.prestation }}</td>
+                </tr>
+                <tr>
+                    <th>Pianod</th>
+                    <td>{{ photoaccueil.pianod }}</td>
+                </tr>
+                <tr>
+                    <th>Pianoaq</th>
+                    <td>{{ photoaccueil.pianoaq }}</td>
+                </tr>
+                <tr>
+                    <th>Diapason</th>
+                    <td>{{ photoaccueil.diapason }}</td>
+                </tr>
+                <tr>
+                    <th>Accessoir</th>
+                    <td>{{ photoaccueil.accessoir }}</td>
+                </tr>
+                <tr>
+                    <th>Clef</th>
+                    <td>{{ photoaccueil.clef }}</td>
+                </tr>
+                <tr>
+                    <th>Note</th>
+                    <td>{{ photoaccueil.note }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_photoaccueil_index') }}" class="btn btn-primary m-1 col-2">Retour à la liste</a>
+
+        <a href="{{ path('app_photoaccueil_edit', {'id': photoaccueil.id}) }}" class="btn btn-primary m-1 col-2">Mofidier</a>
+
+        {{ include('photoaccueil/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

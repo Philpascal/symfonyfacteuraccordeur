@@ -42,10 +42,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 50)]
     private $nom;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Photoaccueil::class)]
+    private $photoaccueils;
      
     public function __construct()
     {
         $this->devis = new ArrayCollection();
+        $this->photoaccueils = new ArrayCollection();
     }
 
     public function __toString()
@@ -207,6 +211,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Photoaccueil>
+     */
+    public function getPhotoaccueils(): Collection
+    {
+        return $this->photoaccueils;
+    }
+
+    public function addPhotoaccueil(Photoaccueil $photoaccueil): self
+    {
+        if (!$this->photoaccueils->contains($photoaccueil)) {
+            $this->photoaccueils[] = $photoaccueil;
+            $photoaccueil->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePhotoaccueil(Photoaccueil $photoaccueil): self
+    {
+        if ($this->photoaccueils->removeElement($photoaccueil)) {
+            // set the owning side to null (unless already changed)
+            if ($photoaccueil->getUser() === $this) {
+                $photoaccueil->setUser(null);
+            }
+        }
+
         return $this;
     }
 }
