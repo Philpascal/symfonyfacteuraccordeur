@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Couleur;
 use App\Form\CouleurType;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/couleur', name:'app_couleur_')]
+#[Route('/admin/couleur', name:'app_couleur_')]
 class CouleurController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(CouleurRepository $couleurRepository): Response
     {
-        return $this->render('couleur/index.html.twig', [
+        return $this->render('admin/couleur/index.html.twig', [
             'couleurs' => $couleurRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class CouleurController extends AbstractController
             return $this->redirectToRoute('app_couleur_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('couleur/new.html.twig', [
+        return $this->renderForm('admin/couleur/new.html.twig', [
             'couleur' => $couleur,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class CouleurController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Couleur $couleur): Response
     {
-        return $this->render('couleur/show.html.twig', [
+        return $this->render('admin/couleur/show.html.twig', [
             'couleur' => $couleur,
         ]);
     }
@@ -60,7 +60,7 @@ class CouleurController extends AbstractController
             return $this->redirectToRoute('app_couleur_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('couleur/edit.html.twig', [
+        return $this->renderForm('admin/couleur/edit.html.twig', [
             'couleur' => $couleur,
             'form' => $form,
         ]);

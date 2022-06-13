@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Marque;
 use App\Form\MarqueType;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/marque', name:'app_marque_')]
+#[Route('/admin/marque', name:'app_marque_')]
 class MarqueController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(MarqueRepository $marqueRepository): Response
     {
-        return $this->render('marque/index.html.twig', [
+        return $this->render('admin/marque/index.html.twig', [
             'marques' => $marqueRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class MarqueController extends AbstractController
             return $this->redirectToRoute('app_marque_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('marque/new.html.twig', [
+        return $this->renderForm('admin/marque/new.html.twig', [
             'marque' => $marque,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class MarqueController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Marque $marque): Response
     {
-        return $this->render('marque/show.html.twig', [
+        return $this->render('admin/marque/show.html.twig', [
             'marque' => $marque,
         ]);
     }
@@ -60,7 +60,7 @@ class MarqueController extends AbstractController
             return $this->redirectToRoute('app_marque_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('marque/edit.html.twig', [
+        return $this->renderForm('admin/marque/edit.html.twig', [
             'marque' => $marque,
             'form' => $form,
         ]);

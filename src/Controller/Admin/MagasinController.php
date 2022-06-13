@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Magasin;
 use App\Form\MagasinType;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/magasin', name:'app_magasin_')]
+#[Route('/admin/magasin', name:'app_magasin_')]
 class MagasinController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(MagasinRepository $magasinRepository): Response
     {
-        return $this->render('magasin/index.html.twig', [
+        return $this->render('admin/magasin/index.html.twig', [
             'magasins' => $magasinRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class MagasinController extends AbstractController
             return $this->redirectToRoute('app_magasin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('magasin/new.html.twig', [
+        return $this->renderForm('admin/magasin/new.html.twig', [
             'magasin' => $magasin,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class MagasinController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Magasin $magasin): Response
     {
-        return $this->render('magasin/show.html.twig', [
+        return $this->render('admin/magasin/show.html.twig', [
             'magasin' => $magasin,
         ]);
     }
@@ -60,7 +60,7 @@ class MagasinController extends AbstractController
             return $this->redirectToRoute('app_magasin_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('magasin/edit.html.twig', [
+        return $this->renderForm('admin/magasin/edit.html.twig', [
             'magasin' => $magasin,
             'form' => $form,
         ]);
@@ -69,9 +69,10 @@ class MagasinController extends AbstractController
     #[Route('/{id}', name: 'delete', methods: ['POST'])]
     public function delete(Request $request, Magasin $magasin, MagasinRepository $magasinRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$magasin->getId(), $request->request->get('_token'))) {
+        // dd($magasin->getProduits()[0]);
+        // if ($this->isCsrfTokenValid('delete'.$magasin->getId(), $request->request->get('_token'))) {
             $magasinRepository->remove($magasin, true);
-        }
+        // }
 
         return $this->redirectToRoute('app_magasin_index', [], Response::HTTP_SEE_OTHER);
     }

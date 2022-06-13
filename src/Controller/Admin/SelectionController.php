@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Produit;
 use App\Form\ProduitType;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/selection', name:'app_selection_')]
+#[Route('/admin/selection', name:'app_selection_')]
 class SelectionController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(ProduitRepository $produitRepository): Response
     {
-        return $this->render('selection/index.html.twig', [
+        return $this->render('admin/selection/index.html.twig', [
             'produits' => $produitRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class SelectionController extends AbstractController
             return $this->redirectToRoute('app_selection_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('selection/new.html.twig', [
+        return $this->renderForm('admin/selection/new.html.twig', [
             'produit' => $produit,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class SelectionController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Produit $produit): Response
     {
-        return $this->render('selection/show.html.twig', [
+        return $this->render('admin/selection/show.html.twig', [
             'produit' => $produit,
         ]);
     }
@@ -60,7 +60,7 @@ class SelectionController extends AbstractController
             return $this->redirectToRoute('app_selection_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('selection/edit.html.twig', [
+        return $this->renderForm('admin/selection/edit.html.twig', [
             'produit' => $produit,
             'form' => $form,
         ]);

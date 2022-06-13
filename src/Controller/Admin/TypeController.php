@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Type;
 use App\Form\TypeType;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/type', name:'app_type_')]
+#[Route('/admin/type', name:'app_type_')]
 class TypeController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(TypeRepository $typeRepository): Response
     {
-        return $this->render('type/index.html.twig', [
+        return $this->render('admin/type/index.html.twig', [
             'types' => $typeRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class TypeController extends AbstractController
             return $this->redirectToRoute('app_type_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('type/new.html.twig', [
+        return $this->renderForm('admin/type/new.html.twig', [
             'type' => $type,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class TypeController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Type $type): Response
     {
-        return $this->render('type/show.html.twig', [
+        return $this->render('admin/type/show.html.twig', [
             'type' => $type,
         ]);
     }
@@ -60,7 +60,7 @@ class TypeController extends AbstractController
             return $this->redirectToRoute('app_type_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('type/edit.html.twig', [
+        return $this->renderForm('admin/type/edit.html.twig', [
             'type' => $type,
             'form' => $form,
         ]);

@@ -5,7 +5,9 @@
 
 <main class="mainpianodroit">
 
-    <h1>Sélections de Pianos Droits</h1>
+    {% for type in types %}
+    <h1>{{ type.forme }}</h1>
+    {% endfor %}
 
     <table>
 

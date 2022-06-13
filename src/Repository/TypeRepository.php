@@ -39,6 +39,17 @@ class TypeRepository extends ServiceEntityRepository
         }
     }
 
+    public function typepiano($id)
+    {
+
+        return $this->createQueryBuilder('t')
+            ->Where('t.id = :id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return Type[] Returns an array of Type objects
 //     */

@@ -30,7 +30,7 @@ class Magasin
     #[ORM\Column(type: 'string', length: 50)]
     private $ville;
 
-    #[ORM\ManyToMany(targetEntity: Produit::class, mappedBy: 'magasin')]
+    #[ORM\ManyToMany(targetEntity: Produit::class, mappedBy: 'magasins')]
     private $produits;
 
     public function __construct()

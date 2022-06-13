@@ -4,10 +4,10 @@
     <div class="card-body">
         <h1>Modifier la sélection</h1>
 
-        {{ include('selection/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+        {{ include('admin/selection/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
         <a href="{{ path('app_selection_index') }}" class="btn btn-primary m-1 col-2">Retour à la liste</a>
 
-        {{ include('selection/_delete_form.html.twig') }}
+        {{ include('admin/selection/_delete_form.html.twig') }}
     </div>
 {% endblock %}

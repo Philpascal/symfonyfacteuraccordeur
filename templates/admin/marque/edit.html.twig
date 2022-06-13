@@ -2,10 +2,12 @@
 
 {% block body %}
     <div class="card-body">
-        <h1>Créer une nouvelle marque</h1>
+        <h1>Modifier une marque</h1>
 
-        {{ include('marque/_form.html.twig') }}
+        {{ include('admin/marque/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
         <a href="{{ path('app_marque_index') }}" class="btn btn-primary m-1 col-2">Retour à la liste</a>
+
+        {{ include('admin/marque/_delete_form.html.twig') }}
     </div>
 {% endblock %}

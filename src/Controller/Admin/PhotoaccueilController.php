@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use App\Entity\Photoaccueil;
 use App\Form\PhotoaccueilType;
@@ -10,13 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/photoaccueil', name:'app_photoaccueil_')]
+#[Route('/admin/photoaccueil', name:'app_photoaccueil_')]
 class PhotoaccueilController extends AbstractController
 {
     #[Route('/', name: 'index', methods: ['GET'])]
     public function index(PhotoaccueilRepository $photoaccueilRepository): Response
     {
-        return $this->render('photoaccueil/index.html.twig', [
+        return $this->render('admin/photoaccueil/index.html.twig', [
             'photoaccueils' => $photoaccueilRepository->findAll(),
         ]);
     }
@@ -34,7 +34,7 @@ class PhotoaccueilController extends AbstractController
             return $this->redirectToRoute('app_photoaccueil_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('photoaccueil/new.html.twig', [
+        return $this->renderForm('admin/photoaccueil/new.html.twig', [
             'photoaccueil' => $photoaccueil,
             'form' => $form,
         ]);
@@ -43,7 +43,7 @@ class PhotoaccueilController extends AbstractController
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Photoaccueil $photoaccueil): Response
     {
-        return $this->render('photoaccueil/show.html.twig', [
+        return $this->render('admin/photoaccueil/show.html.twig', [
             'photoaccueil' => $photoaccueil,
         ]);
     }
@@ -60,7 +60,7 @@ class PhotoaccueilController extends AbstractController
             return $this->redirectToRoute('app_photoaccueil_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('photoaccueil/edit.html.twig', [
+        return $this->renderForm('admin/photoaccueil/edit.html.twig', [
             'photoaccueil' => $photoaccueil,
             'form' => $form,
         ]);
@@ -73,6 +73,6 @@ class PhotoaccueilController extends AbstractController
             $photoaccueilRepository->remove($photoaccueil, true);
         }
 
-        return $this->redirectToRoute('app_photoaccueil_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('admin/app_photoaccueil_index', [], Response::HTTP_SEE_OTHER);
     }
 }
