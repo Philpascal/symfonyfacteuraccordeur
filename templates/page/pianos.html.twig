@@ -1,36 +1,67 @@
 {% extends 'facteuraccordeur.html.twig' %}
-{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/stylepianodroit.css') }}" rel="stylesheet" />{% endblock %}
+{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/stylepianos.css') }}" rel="stylesheet" />{% endblock %}
 
 {% block body %}
 
 <main class="mainpianodroit">
 
     {% for type in types %}
-    <h1>{{ type.forme }}</h1>
+    <h1>La sélection : {{ type.forme }}</h1>
     {% endfor %}
 
-    <table>
+    <table class="tableone">
+
+        <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <th class="thphoto">Photo</th>
+                    <td><img src="{{ app_cdn }}{{ produit.photo }}" alt="#"></td>
+                </tr>
+                <tr class="trmarque">
+                    <th>Marque</th>
+                    <td>{{ produit.marque }}</td>
+                </tr>
+                <tr class="trreference">
+                    <th>Réfence</th>
+                    <td class="tdreference">{{ produit.ref }}</td>
+                </tr>
+                <tr class="trprix">
+                    <th>Prix <span>:</span></th>
+                    <td>{{ produit.prix }} €</td>
+                </tr>
+                <tr class="trmagasin">
+                    <th>Magasin</th>
+                    <td>
+                        {% for magasin in produit.magasins %}
+                        {{ magasin.nom }} <br> {{ magasin.numero }} {{ magasin.voie }} <br> {{ magasin.codepostal }} {{ magasin.ville }}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+
+    <table class="tabletwo">
 
         <thead>
             <tr>
-                <th>Photo</th>
-                <th>Marque</th>
-                <th>Réfence</th>
-                <th>Prix</th>
-                <th>Magasin</th>
+                <th class="tabletwotheadphoto">Photo</th>
+                <th class="tabletwotheadmarque">Marque</th>
+                <th class="tabletwotheadreference">Réfence</th>
+                <th class="tabletwotheadreprix">Prix en €</th>
+                <th class="tabletwotheadremagasin">Magasin</th>
             </tr>
         </thead>
 
         <tbody>
             {% for produit in produits %}
-                <tr >
-                    <td>
-                        <img src="{{ app_cdn }}{{ produit.photo }}" alt="#" width="100">
-                    </td>
-                    <td>{{ produit.marque }}</td>
-                    <td>{{ produit.ref }}</td>
-                    <td>{{ produit.prix }}</td>
-                    <td>
+                <tr>
+                    <td  class="tabletwotbodyphoto"><img src="{{ app_cdn }}{{ produit.photo }}" alt="#"></td>
+                    <td class="tabletwotbodymarque">{{ produit.marque }}</td>
+                    <td class="tabletwotbodpref">{{ produit.ref }}</td>
+                    <td  class="tabletwotbodprix">{{ produit.prix }}</td>
+                    <td class="tabletwotbodmagasin">
                         {% for magasin in produit.magasins %}
                         {{ magasin.nom }} <br> {{ magasin.numero }} {{ magasin.voie }} <br> {{ magasin.codepostal }} {{ magasin.ville }}
                         {% endfor %}

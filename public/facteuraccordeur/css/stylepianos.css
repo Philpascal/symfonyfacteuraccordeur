@@ -1,0 +1,182 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items:center;
+}
+
+.mainpianodroit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16vh;
+    margin-right: 6vw;
+    margin-bottom: 16vh;
+    margin-left: 6vw;
+}
+ 
+.tabletwo{
+    display: none;
+}
+
+h1{
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+tbody{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-size: 1.1rem;
+   color: #c7913c;
+}
+
+th, td{
+   padding: 0 4px 0 4px;
+}
+
+td img{
+    background-color: #c7913c;
+    padding: 8px;
+}
+
+.mainpianodroit img{
+    width: 60vw;
+    max-width: 300px;
+}
+
+.thphoto{
+    display: none;
+}
+
+.trmarque{
+    margin-top: 14px;
+}
+
+.trmarque td{
+    color: white;
+}
+
+.trreference{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.trprix{
+    margin-top: 10px;
+}
+
+.trmagasin{
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+.trmagasin td{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 630px){
+
+    .mainpianodroit{
+        margin-top: 26vh;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+    .tableone{
+        display: none;
+    }
+
+    .tabletwo{
+        display: block;
+    }
+
+    
+    table, th, td, tr{
+        border: solid #c7913c 1px;
+        text-align: center;
+    }
+
+    .tabletwotheadphoto{
+        width: 91px;
+    }
+
+    .tabletwotheadmarque{
+        width: 90px;
+    }
+
+    .tabletwotheadreference{
+        width: 180px;
+    }
+
+    .tabletwotheadreprix{
+        width: 70px;
+    }
+
+    .tabletwotheadremagasin{
+        width: 190px;
+    }
+
+    tbody tr{
+        display: flex;
+    }
+
+    tr{
+        width: 100%;
+    }
+  
+    th{
+        padding: 10px;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+  
+    td{
+        color: white;
+        letter-spacing: 1px;
+        padding-top: 5px;
+    }
+
+    .mainpianodroit img{
+        width: 80px;
+        background-color: black;
+        padding: 0;
+    }
+
+    .tabletwotbodymarque{
+        width: 90px;
+    }
+
+    .tabletwotbodpref{
+        width: 180px;
+    }
+
+    .tabletwotbodprix{
+        width: 70px;
+    }
+
+    .tabletwotbodmagasin{
+        width: 190px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
