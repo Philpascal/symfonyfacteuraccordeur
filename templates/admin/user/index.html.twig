@@ -1,0 +1,49 @@
+{% extends 'faadmin.html.twig' %}
+
+{% block body %}
+    <div class="card-body">
+        <h1>Gestion des utilisateurs</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    {# <th>Id</th> #}
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Accès</th>
+                    <th>Roles</th>
+                    <th>Tel</th>
+                    <th>Email</th>
+                    <th>actions</th>
+                    {# <th>Password</th> #}
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    {# <td>{{ user.id }}</td> #}
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.isVerified ? '✅' : '⛔' }}</td>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                    <td>{{ user.tel }}</td>
+                    <td>
+                        <a href="mailto:{{user.email }}">{{ user.email }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('app_admin_user_show', {'id': user.id}) }}"class="btn btn-danger m-1">Supprimer</a>
+                        <a href="{{ path('app_admin_user_edit', {'id': user.id}) }}"class="btn btn-primary m-1">Modifier</a>
+                    </td>
+                    {# <td>{{ user.password }}</td> #}
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {# <a href="{{ path('app_admin_user_new') }}">Create new</a> #}
+</div>
+{% endblock %}
