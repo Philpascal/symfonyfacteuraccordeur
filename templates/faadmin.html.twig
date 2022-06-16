@@ -12,7 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 
         <link href="{{ asset('faadmin/css/styles.css') }}" rel="stylesheet" />
-        {% block stylesheets %}{% endblock %}
+        <link href="{{ asset('faadmin/css/stylebackoffice.css') }}" rel="stylesheet" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -21,7 +21,7 @@
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="#">Administration du site Facteur Accordeur de Pianos</a>
+            <h1 class="navbar-brand ps-3" href="#">Administration du site d'Antoine BERTHIER</h1>
             <!-- Sidebar Toggle-->
             {# <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button> #}
 
@@ -38,10 +38,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="#!">Changer le rôle des users</a></li>
+                        {# <li><a class="dropdown-item" href="#!">Supprimer des administrateurs</a></li> #}
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}">
+                            <img class="faadmindeconnexion" src="{{asset('facteuraccordeur/images/deconnexion.jpg')}}" alt="#">    
+                                Déconnexion
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -53,12 +58,12 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
 
-                            <a class="nav-link" href="{{ path('home') }}">
+                            <a class="mmtfo nav-link" href="{{ path('home') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 FRONT-OFFICE
                             </a>
 
-                            <a class="nav-link" href="{{ path('admin_home') }}">
+                            <a class="mmtbo nav-link" href="{{ path('admin_home') }}">
                                 BACK-OFFICE
                             </a>
 
@@ -114,10 +119,10 @@
                                 </nav>
                             </div>
                             
-                            <a class="nav-link" href="charts.html">
+                            {# <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Charts
-                            </a>
+                            </a> #}
 
                         </div>
                     </div>

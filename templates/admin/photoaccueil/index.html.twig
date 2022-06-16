@@ -2,44 +2,46 @@
 
 {% block body %}
     <div class="card-body">
-        <h1>Images & Vidéo de la page d'accueil</h1>
+        <h1 class="indexphotoaccueiltitre">Images & Vidéo de la page d'accueil</h1>
 
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Carrouselp</th>
-                    <th>Carrouseld</th>
-                    <th>Carrouselt</th>
-                    <th>Carrouselq</th>
-                    <th>Carrouselc</th>
-                    <th>Note</th>
-                    <th>Prestation</th>
-                    <th>Pianod</th>
-                    <th>Pianoaq</th>
-                    <th>Diapason</th>
-                    <th>Accessoir</th>
-                    <th>Clef</th>
-                    <th>Vidéo</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
+            
             <tbody>
             {% for photoaccueil in photoaccueils %}
-                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselp}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.carrouseld}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselt}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselq}}" alt="#" width="80"></td>    
-                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselc}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.note}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.prestation}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.pianod}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.pianoaq}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.diapason}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.accessoir}}" alt="#" width="80"></td>
-                    <td><img src="{{app_cdn}}{{photoaccueil.clef}}" alt="#" width="80"></td>
+                <tr class="zztop">
+                    <th>Carrouselp</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselp}}" alt="#" width="160"></td>
+                    <th>Carrouseld</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouseld}}" alt="#" width="160"></td>
+                    <th>Carrouselt</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselt}}" alt="#" width="160"></td>
+                    <th>Carrouselq</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselq}}" alt="#" width="160"></td>
+                </tr>
+                <tr>
+                    <th>Carrouselc</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.carrouselc}}" alt="#" width="160"></td>
+                    <th>Prestation</th>   
+                    <td><img src="{{app_cdn}}{{photoaccueil.prestation}}" alt="#" width="160"></td>
+                    <th>Pianod</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.pianod}}" alt="#" width="160"></td>
+                    <th>Pianoaq</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.pianoaq}}" alt="#" width="160"></td>
+                </tr>
+                <tr>
+                    <th>Diapason</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.diapason}}" alt="#" width="160"></td>
+                    <th>Accessoir</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.accessoir}}" alt="#" width="160"></td>
+                    <th>Clef</th>
+                    <td><img src="{{app_cdn}}{{photoaccueil.clef}}" alt="#" width="160"></td>
+                    <th>Vidéo</th>
                     <td>{{ photoaccueil.video }}</td>
+                </tr>
+                <tr>
+                    <th>Action</th>
                     <td>
-                        <a href="{{ path('app_photoaccueil_edit', {'id': photoaccueil.id}) }}" class="btn btn-primary m-1">Modifier</a>
+                        <a href="{{ path('app_photoaccueil_edit', {'id': photoaccueil.id}) }}" class="btn btn-primary m-1">Modifier la page</a>
                     </td>
                 </tr>
                 

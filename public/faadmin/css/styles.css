@@ -3855,6 +3855,9 @@ textarea.form-control-lg {
   border-top-right-radius: 0;
 }
 
+.mmtfo{
+  margin-top: 60px;
+}
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -3863,6 +3866,9 @@ textarea.form-control-lg {
   list-style: none;
 }
 
+.mmtbo{
+  margin-top: 40px;
+}
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
@@ -6207,7 +6213,7 @@ textarea.form-control-lg {
 
 .fixed-top, .sb-nav-fixed #layoutSidenav #layoutSidenav_nav, .sb-nav-fixed .sb-topnav {
   position: fixed;
-  top: 0;
+  top: 0px;
   right: 0;
   left: 0;
   z-index: 1030;
@@ -10967,7 +10973,7 @@ body {
 
 .sb-topnav {
   padding-left: 0;
-  height: 56px;
+  height: 70px;
   z-index: 1039;
 }
 .sb-topnav .navbar-brand {
