@@ -5,7 +5,16 @@
     <main class="mainformulaire">
             
         <h1>Formulaire de contact</h1>
-        {{form(form)}}
+        {# {{form(form)}} #}
+        <p>Veuillez indiquer votre adresse</p>
+        {{ form_start(form) }}
+            {{ form_row(form.numero) }}
+            {{ form_row(form.voie) }}
+            {{ form_row(form.codepostal) }}
+            {{ form_row(form.ville) }}
+            <br>
+            {{ form_row(form.message) }}
+        {{ form_end(form) }}
         
     </main>
 {% endblock %}

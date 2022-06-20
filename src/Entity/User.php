@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;/***********pattern********* */
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
@@ -25,6 +26,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'json')]
     private $roles = [];
 
+
     #[ORM\Column(type: 'string')]
     private $password;
 
@@ -37,7 +39,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 50)]
     private $prenom;
 
-    #[ORM\Column(type: 'string', length: 50)]
+    /**
+    * @Assert\Regex(
+    *     pattern="/[0][0-9]{9}/"
+    * )
+    */
+    #[ORM\Column(type: 'string', length: 10)]
     private $tel;
 
     #[ORM\Column(type: 'string', length: 50)]

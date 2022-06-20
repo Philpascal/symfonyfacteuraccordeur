@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\DevisRepository;
 use Gedmo\Mapping\Annotation as Gedmo;/************************date auto************* */
+
 #[ORM\Entity(repositoryClass: DevisRepository::class)]
 class Devis
 {
@@ -18,7 +19,7 @@ class Devis
      */
     #[ORM\Column(type: 'datetime_immutable')]/************date auto*************************** */
     private $date;
-            
+    
     #[ORM\Column(type: 'integer')]
     private $numero;
 
@@ -28,9 +29,6 @@ class Devis
     #[ORM\Column(type: 'string', length: 50)]
     private $ville;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $photo;
-
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'devis')]
     #[ORM\JoinColumn(nullable: true)]
     private $user;
@@ -39,7 +37,7 @@ class Devis
     private $userrepondre;
 
     #[ORM\Column(type: 'string', length: 30)]
-    private $rue;
+    private $voie;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $message;
@@ -77,7 +75,7 @@ class Devis
         return $this;
     }
 
-    public function getCodepostal(): ?int
+        public function getCodepostal(): ?int
     {
         return $this->codepostal;
     }
@@ -96,17 +94,6 @@ class Devis
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
-        return $this;
-    }
-
-    public function getPhoto(): ?string
-    {
-        return $this->photo;
-    }
-
-    public function setPhoto(?string $photo): self
-    {
-        $this->photo = $photo;
         return $this;
     }
 
@@ -132,14 +119,14 @@ class Devis
         return $this;
     }
 
-    public function getRue(): ?string
+    public function getVoie(): ?string
     {
-        return $this->rue;
+        return $this->voie;
     }
 
-    public function setRue(string $rue): self
+    public function setVoie(string $voie): self
     {
-        $this->rue = $rue;
+        $this->voie = $voie;
         return $this;
     }
 

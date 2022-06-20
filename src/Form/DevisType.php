@@ -19,21 +19,29 @@ class DevisType extends AbstractType
             
             ->add('numero', IntegerType::class, [
                 "label" => "N°",
+                'attr' => [
+                    'placeholder' => 'ex: 5']
             ])
-            ->add('rue', TextType::class, [
-                 "label" => "Rue",
+            ->add('voie', TextType::class, [
+                 "label" => "Voie",
+                 'attr' => [
+                    'placeholder' => 'ex: Rue Jean Jaures, Bd Victor HUGOT...']
              ])
             ->add('codepostal', IntegerType::class, [
                 "label" => "Code postal",
+                'attr' => [
+                    'placeholder' => 'ex: 78000']
             ])
             ->add('ville', TextType::class, [
                 "label" => "Ville",
+                'attr' => [
+                    'placeholder' => 'ex: VERSAILLES']
             ])
             ->add('message', TextareaType::class, [
                 "label" => "Message",
-            ])
-            ->add('photo', TextType::class, [
-                "label" => "Photo",
+                'attr' => [
+                    'placeholder' => 'Merci d\'indiquer le type d\'intervention.
+                     Falcultativement la marque et la réfence du piano ']
             ])
             ->add('Valider', SubmitType::class)
         ;

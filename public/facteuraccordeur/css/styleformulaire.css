@@ -5,15 +5,20 @@
 }
 
 .mainformulaire{
-    margin-top: 20vh;
+    margin-top: 16vh;
     margin-bottom: 14vh;
+    width: 80%;
 }
 
 .mainformulaire h1{
     font-size: 1.5rem;
     letter-spacing: 1px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.mainformulaire p{
     margin-bottom: 20px;
-    width: 40vw;
 }
 
 .mainformulaire .btn{
@@ -24,10 +29,4 @@
 .mainformulaire label{
     letter-spacing: 1px !important;
     font-size: 1.2rem;
-}
-
-@media only screen and (min-width: 400px){
-    .mainformulaire{
-        margin-top: 26vh;
-    }
 }

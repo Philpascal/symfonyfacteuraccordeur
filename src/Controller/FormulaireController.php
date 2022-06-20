@@ -24,9 +24,11 @@ class FormulaireController extends AbstractController
             $form = $this->createForm(DevisType::class, $devis);
 
             $form->handleRequest($request);
+            
             if ($form->isSubmitted() && $form->isValid()) {
-
+                
                 $devis->setUser($this->getUser());
+                
                 $em = $doctrine->getManager();
                 $em->persist($devis);
                 $em->flush();

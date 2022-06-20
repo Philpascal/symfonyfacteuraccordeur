@@ -158,6 +158,10 @@ body{
 	height: 28px;
 }
 
+.logo:hover {
+	cursor:default;
+	}
+
 .cont_site{
 	display: flex;
 	flex-direction: column;
