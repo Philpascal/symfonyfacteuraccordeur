@@ -1,10 +1,18 @@
 {% extends 'faadmin.html.twig' %}
-{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/stylepianodroit.css') }}" rel="stylesheet" />{% endblock %}
+{% block stylesheets %}<link href="{{ asset('faadmin/css/stylebackoffice.css') }}" rel="stylesheet" />{% endblock %}
 
 
 {% block body %}
     <div class="card-body">
         <h1>La liste des sélections</h1>
+
+        <div>
+            {% if filtervalue is defined %}
+                <p class="adminselectionindexp">
+                    {{ filter }} {{ filtervalue }}
+                </p>
+            {% endif %}
+        </div>
 
         <table class="table" id="datatablesSimple">
             <thead>
@@ -30,7 +38,7 @@
                     <td>{{ produit.type }}</td>
                     <td>{{ produit.ref }}</td>
                     <td>{{ produit.prix }}</td>
-                    {# <td>{{ dump(produit.magasins) }}</td> #}
+                    {# <td>{{ dump(produit.magasins) }}</td>
                     {# une deuxième boucle car 2 id ds la même entity  #}
                     <td>
                     {% for magasin in produit.magasins %}

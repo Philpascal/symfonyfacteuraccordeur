@@ -1,21 +1,38 @@
 .faadmindeconnexion{
     width: 36px;
     border-radius: 50%;
+    
 }
 
-.indexbackofficeimg{
+.adminindeximg{
     width: 100%;
     height: 110%;
 }
 
 
-.indexbackofficetitre{
+.adminindexh1{
     margin-top: -180px;
     margin-left: 40vw;
     font-size: 3rem;
     font-weight: 700;
 }
 
-.indexphotoaccueiltitre{
+.adminphotoaccueilindexh1{
     margin-bottom: 50px;
+}
+
+.faadminsearch{
+    margin-top: 18px;
+}
+
+/***********************barre de recherche dans faadmin******************/
+#form{
+    display: flex;
+    flex-direction: row;
+}
+/**************************************************************************/
+
+.adminselectionindexp{
+    font-size: 1.8rem;
+    font-weight: 700;
 }

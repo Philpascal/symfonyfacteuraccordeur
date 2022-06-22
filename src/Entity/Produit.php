@@ -21,9 +21,6 @@ class Produit
     #[ORM\Column(type: 'string', length: 50)]
     private $ref;
 
-    #[ORM\Column(type: 'string', length: 10)]
-    private $prix;
-
     #[ORM\ManyToOne(targetEntity: Marque::class, inversedBy: 'produits')]
     #[ORM\JoinColumn(nullable: false)]
     private $marque;
@@ -39,6 +36,9 @@ class Produit
 /******************le produit pointe vers le magasin************************************* */
     #[ORM\ManyToMany(targetEntity: Magasin::class, inversedBy: 'produits')]
     private $magasins;
+
+    #[ORM\Column(type: 'integer')]
+    private $prix;
 
     public function __construct()
     {
@@ -70,18 +70,6 @@ class Produit
     public function setRef(string $ref): self
     {
         $this->ref = $ref;
-
-        return $this;
-    }
-
-    public function getPrix(): ?string
-    {
-        return $this->prix;
-    }
-
-    public function setPrix(string $prix): self
-    {
-        $this->prix = $prix;
 
         return $this;
     }
@@ -143,6 +131,18 @@ class Produit
     public function removeMagasin(Magasin $magasin): self
     {
         $this->magasins->removeElement($magasin);
+
+        return $this;
+    }
+
+    public function getPrix(): ?int
+    {
+        return $this->prix;
+    }
+
+    public function setPrix(int $prix): self
+    {
+        $this->prix = $prix;
 
         return $this;
     }

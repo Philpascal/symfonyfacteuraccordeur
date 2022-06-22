@@ -101,11 +101,10 @@
                             <th>Tel</th>
                             <th>Email</th>
                             <th>Numéro</th>
-                            <th>Rue</th>
+                            <th>Voie</th>
                             <th>Code-postal</th>
                             <th>Ville</th>
                             <th>Message</th>
-                            <th>Photo</th>
                             <th>Nom réponse</th>
                             <th>Réponse</th>
                             <th>Date réponse</th>
@@ -123,11 +122,10 @@
                                 <a href="mailto:{{devis.user.email }}">{{devis.user.email }}</a>
                             </td>
                             <td>{{ devis.numero }}</td>
-                            <td>{{ devis.rue }}</td>
+                            <td>{{ devis.voie }}</td>
                             <td>{{ devis.codepostal }}</td>
                             <td>{{ devis.ville }}</td>
                             <td>{{ devis.message }}</td>
-                            <td>{{ devis.photo }}</td>
                             <td>{{ devis.userrepondre}}</td>
                             <td>{{ devis.reponse }}</td>
                             <td>{{ (devis.datereponse != null)? devis.datereponse | date:"" }}</td>
