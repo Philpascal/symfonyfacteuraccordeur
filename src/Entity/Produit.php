@@ -35,6 +35,7 @@ class Produit
 /*************pour la collection magasin, 2 id dans l'entity, pour aller chercher l'attribut, mettre des s*/
 /******************le produit pointe vers le magasin************************************* */
     #[ORM\ManyToMany(targetEntity: Magasin::class, inversedBy: 'produits')]
+    // #[ORM\JoinColumn(nullable: false)]
     private $magasins;
 
     #[ORM\Column(type: 'integer')]
