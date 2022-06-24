@@ -1,0 +1,61 @@
+{% extends 'faadmin.html.twig' %}
+
+{% block body %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Devis reçus</h1>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Bilan Devis
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Tel</th>
+                            <th>Email</th>
+                            <th>Numéro</th>
+                            <th>Voie</th>
+                            <th>Code-postal</th>
+                            <th>Ville</th>
+                            <th>Message</th>
+                            <th>Nom réponse</th>
+                            <th>Réponse</th>
+                            <th>Date réponse</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for devis in deviss %}
+                        <tr>
+                            <td>{{ devis.date | date}}</td>
+                            <td>{{ devis.user.nom }}</td>
+                            <td>{{ devis.user.prenom }}</td>
+                            <td>{{ devis.user.tel }}</td>
+                            <td> 
+                                <a href="mailto:{{devis.user.email }}">{{devis.user.email }}</a>
+                            </td>
+                            <td>{{ devis.numero }}</td>
+                            <td>{{ devis.voie }}</td>
+                            <td>{{ devis.codepostal }}</td>
+                            <td>{{ devis.ville }}</td>
+                            <td>{{ devis.message }}</td>
+                            <td>{{ devis.userrepondre}}</td>
+                            <td>{{ devis.reponse }}</td>
+                            <td>{{ (devis.datereponse != null)? devis.datereponse | date:"" }}</td>
+                            <td><a class="btn btn-primary" href="{{ path('app_repondre', {id:devis.id}) }}">Repondre</td></a>
+                            <td><a class="btn btn-danger" href="#">Alerte</td></a>
+                        </tr> 
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

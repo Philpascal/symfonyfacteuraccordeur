@@ -24,19 +24,22 @@
             <p class="info">
                 Pour m'envoyer un message, l'inscription est obligatoire seulement pour la première connexion
             </p>
-        {% else %}
-        {# <a class="nav-link" href="{{ path('app_logout') }}"></a> #}
-        <img class="telephonecontact" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#">
+            
 
-            <p class="numero">06 06 06 06 06<br>
-                <span class="info">Pour me contacter par téléphone</span>
+        {% else %}
+            {# <a class="nav-link" href="{{ path('app_logout') }}"></a> #}
+            <img class="telephonecontact" src="{{ asset('facteuraccordeur/images/telephone.png') }}" alt="#">
+
+                <p class="numero">06 06 06 06 06<br>
+                    <span class="info">Pour me contacter par téléphone</span>
+                </p>
+            <a class="boutonformulairecontact btn btn-primary" href="{{ path('app_formulaire') }}">
+            Formulaire de contact
+            </a>
+            <p class="info">
+                Pour accéder au formulaire vous devez impérativement valider votre adresse mail en cliquant sur le lien que vous avez reçu dans votre messagerie
             </p>
-        <a class="boutonformulairecontact btn btn-primary" href="{{ path('app_formulaire') }}">
-        Formulaire de contact
-        </a>
-        <p class="info">
-            Pour accéder au formulaire vous devez impérativement valider votre adresse mail en cliquant sur le lien que vous avez reçu dans votre messagerie
-        </p>
+            <a class="chgtmdp" href="{{ path('app_password') }}">Changer de mot de passe</a>
         {% endif %}
 
     </div>

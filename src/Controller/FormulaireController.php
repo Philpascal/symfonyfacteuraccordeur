@@ -38,7 +38,8 @@ class FormulaireController extends AbstractController
         else {
             return $this->redirectToRoute('page_contact');
         }
-        return $this->render('formulaire/index.html.twig', [ 'titrepage' => 'Formulaire - Facteur Accordeur Piano',
+        return $this->render('formulaire/index.html.twig', [ 
+            'titrepage' => 'Formulaire - Facteur Accordeur Piano',
             'form' => $form->createView(),
         ]);
     }
