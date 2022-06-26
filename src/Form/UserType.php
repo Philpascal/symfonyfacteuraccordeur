@@ -6,7 +6,6 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Length;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
@@ -35,26 +34,14 @@ class UserType extends AbstractType
                 "label" => "Cocher la case pour autoriser l'accès",
                 "required"=>false,
             ])
-            // ->add('oldPassword', PasswordType::class, [
-            //     'mapped' => false,
-            //     'label' => 'Mot de pass actuel',
-            //     'attr' => ['autocomplet' => 'email'],
-            //     'constraints' => [
-            //         new NotBlank([
-            //             'message' => 'Mot de passe actuel',
-            //         ]),
-            //     ],
-            // ])
             ->add('plainPassword', RepeatedType::class,[
                 'mapped' => false,
+                'required' => false,
                 'type' => PasswordType::class,
                 'first_options' => [
                     'attr' => ['autocomplete' => 'new-password'],
                     'label' => 'Nouveau mot de passe',
                     'constraints' => [
-                        new NotBlank([
-                            'message' => 'Entrer un nouveau mot de passe',
-                        ]),
                         new Length([
                             'min' => 6,
                             'minMessage' => 'Votre mot de passe doit contenir au {{ limit }} caractères',
@@ -69,9 +56,6 @@ class UserType extends AbstractType
                 ],
                 'invalid_message' => 'Vous n\'avez pas tapé 2 fois le même mot de passe',
             ])
-            // ->add('valider', SubmitType::class,[
-            //     'label' => 'Modifier',
-            // ])
         ;
     }
 

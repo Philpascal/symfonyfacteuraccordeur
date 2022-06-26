@@ -24,14 +24,13 @@ class UserController extends AbstractController
     }
 
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
-    public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher, ManagerRegistry $doctrine): Response
+    public function new(Request $request, UserPasswordHasherInterface $userPasswordHasher, ManagerRegistry $doctrine): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $userRepository->add($user, true); 
             //on hash le nouveau mot de pass
             $encodedPassword = $userPasswordHasher->hashPassword(
                 $user,
@@ -65,12 +64,24 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, User $user, UserRepository $userRepository): Response
+    public function edit(Request $request, User $user, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
+        
+        $plainPassword = $form->get('plainPassword')->getData();
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if($plainPassword != null){
+                $encodedPassword = $userPasswordHasher->hashPassword(
+                    $user,
+                    $plainPassword
+                );
+                //on le stock dans l'instance user
+                $user->setPassword($encodedPassword);
+            }
             $userRepository->add($user, true);
 
             return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);

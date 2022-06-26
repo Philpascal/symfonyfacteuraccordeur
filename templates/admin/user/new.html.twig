@@ -3,15 +3,7 @@
 {% block body %}
     <div class="card-body">
         <h1>Créer un nouvel utilisateur</h1>
-
         {{ include('admin/user/_form.html.twig') }}
-        {# {{ user.password }} #}
-        {# {% if password = null %}
-                    {{ user.password:"" }}
-        {% endif %} #}
-
-        {# {{ (user.password != null)? user.password:""  }} #}
-
         <a href="{{ path('app_admin_user_index') }}" class="btn btn-primary m-1 col-2">Retour à la liste</a>
     </div>
 {% endblock %}

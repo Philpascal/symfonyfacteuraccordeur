@@ -606,6 +606,7 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  margin-top: 2px;
 }
 
 @media (min-width: 576px) {
@@ -11029,7 +11030,7 @@ body {
   flex-direction: column;
 }
 .sb-sidenav .sb-sidenav-footer {
-  padding: 0.75rem;
+  padding: 0.9rem;
   flex-shrink: 0;
 }
 
