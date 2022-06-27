@@ -23,3 +23,7 @@
     margin-top: 30px;
     width: 110px;
 }
+.form-control::placeholder{
+    color: #bfaa8c;
+    font-style: italic;
+}

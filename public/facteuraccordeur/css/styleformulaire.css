@@ -30,3 +30,8 @@
     letter-spacing: 1px !important;
     font-size: 1.2rem;
 }
+
+.form-control::placeholder{
+    color: #bfaa8c;
+    font-style: italic;
+}

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;/***********pattern********* */
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\DevisRepository;
 use Gedmo\Mapping\Annotation as Gedmo;/************************date auto************* */
@@ -23,8 +24,15 @@ class Devis
     #[ORM\Column(type: 'integer')]
     private $numero;
 
-    #[ORM\Column(type: 'integer')]
+    /**
+    * @Assert\Regex(
+    *     pattern="/[0][0-9]{4}/"
+    * )
+    */
+    #[ORM\Column(type: 'string', length: 5)]
     private $codepostal;
+    // #[ORM\Column(type: 'integer')]
+    // private $codepostal;
 
     #[ORM\Column(type: 'string', length: 50)]
     private $ville;
@@ -75,16 +83,26 @@ class Devis
         return $this;
     }
 
-        public function getCodepostal(): ?int
+    public function getCodepostal(): ?string
     {
         return $this->codepostal;
     }
 
-    public function setCodepostal(int $codepostal): self
+    public function setCodepostal(string $codepostal): self
     {
         $this->codepostal = $codepostal;
         return $this;
     }
+    // public function getCodepostal(): ?int
+    // {
+    //     return $this->codepostal;
+    // }
+
+    // public function setCodepostal(int $codepostal): self
+    // {
+    //     $this->codepostal = $codepostal;
+    //     return $this;
+    // }
 
     public function getVille(): ?string
     {

@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Devis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -27,10 +28,18 @@ class DevisType extends AbstractType
                  'attr' => [
                     'placeholder' => 'ex: Rue Jean Jaures, Bd Victor HUGOT...']
              ])
-            ->add('codepostal', IntegerType::class, [
+            ->add('codepostal', TextType::class, [
                 "label" => "Code postal",
                 'attr' => [
-                    'placeholder' => 'ex: 78000']
+                    'placeholder' => 'ex: 78000',
+                    //'maxlength' => 99999,
+                ],
+                'constraints' => [
+                    new Length([
+                        'min' => 5,
+                        'max' => 5,
+                    ]),
+                ],
             ])
             ->add('ville', TextType::class, [
                 "label" => "Ville",

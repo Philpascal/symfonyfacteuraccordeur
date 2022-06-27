@@ -195,7 +195,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setPrenom(string $prenom): self
     {
-        $this->prenom = $prenom;
+        $this->prenom = ucfirst($prenom);
         return $this;
     }
 
@@ -217,7 +217,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setNom(string $nom): self
     {
-        $this->nom = $nom;
+        $this->nom = strtoupper($nom);
         return $this;
     }
 

@@ -24,16 +24,27 @@ class RegistrationFormType extends AbstractType
                 ]])
             ->add('nom', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'ex: BERTHIER'
+                    'placeholder' => 'ex: BERTHIER',
+                    'class' => 'text-uppercase'
                 ]])
             ->add('prenom', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'ex: Antoine'
+                    'placeholder' => 'ex: Antoine',
+                    'class' => 'text-capitalize'
                 ]])
             ->add('tel', TextType::class, [
                 'attr' => [
-                    'placeholder' => 'ex: 0611223344'
-                ]])
+                    'placeholder' => 'ex: 0611223344',
+                    'class' => 'number'
+                    //'max' => 10,
+                ],
+                'constraints' => [
+                    new Length([
+                        'min' => 10,
+                        'max' => 10,
+                    ]),
+                ],
+                ])
             ->add('agreeTerms', CheckboxType::class, [
                 "label" => "Accepter les conditions",
                 'mapped' => false,
