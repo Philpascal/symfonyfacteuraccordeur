@@ -20,7 +20,8 @@ class SearchController extends AbstractController
                 'label' => false,
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Prix maxi d\'un Piano'
+                    'placeholder' => 'Prix maxi d\'un Piano',
+                    'min' => 0,
                 ]
             ])
             ->add('recherche', SubmitType::class, [
