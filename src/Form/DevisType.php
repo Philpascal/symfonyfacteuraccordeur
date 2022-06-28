@@ -32,7 +32,7 @@ class DevisType extends AbstractType
                 "label" => "Code postal",
                 'attr' => [
                     'placeholder' => 'ex: 78000',
-                    //'maxlength' => 99999,
+                    'maxlength' => 5,
                 ],
                 'constraints' => [
                     new Length([

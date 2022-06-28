@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;/***********pattern********* */
+// use Symfony\Component\Validator\Constraints as Assert;/***********pattern********* */
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\DevisRepository;
 use Gedmo\Mapping\Annotation as Gedmo;/************************date auto************* */
@@ -25,7 +25,7 @@ class Devis
     private $numero;
 
     /**
-    * @Assert\Regex(
+    * Assert\Regex(
     *     pattern="/[0][0-9]{4}/"
     * )
     */
@@ -49,7 +49,6 @@ class Devis
 
     #[ORM\Column(type: 'string', length: 255)]
     private $message;
-
     #[ORM\Column(type: 'text', nullable: true)]
     private $reponse;
 
