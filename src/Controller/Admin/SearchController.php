@@ -19,15 +19,15 @@ class SearchController extends AbstractController
             ->add('query',IntegerType::class, [
                 'label' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    //'class' => 'form-control',
                     'placeholder' => 'Prix maxi d\'un Piano',
                     'min' => 0,
                 ]
             ])
             ->add('recherche', SubmitType::class, [
-                'attr' => [
-                    'btn btn-primary btn-sm'
-                    ]
+                // 'attr' => [
+                //     'class' => 'btn btn-primary btn-sm'
+                //     ]
             ])
             ->getForm();
         
@@ -45,7 +45,7 @@ class SearchController extends AbstractController
         //dd($produits);
         return $this->render('admin/selection/index.html.twig', [
             'filter' => 'Suite à votre recherche de pianos inférieurs à',
-            'filtervalue' => $query .' '. '€',
+            'filtervalue' => $query .' €',
             'produits' => $produits
         ]);
     }

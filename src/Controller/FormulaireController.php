@@ -32,6 +32,12 @@ class FormulaireController extends AbstractController
                 $em = $doctrine->getManager();
                 $em->persist($devis);
                 $em->flush();
+
+
+                // @TODO Change the redirect on success and handle or remove the flash message in your templates
+                $this->addFlash('success', 'Le formumaire a été envoyé.');
+
+
                 return $this->redirectToRoute('home');
             }
         }

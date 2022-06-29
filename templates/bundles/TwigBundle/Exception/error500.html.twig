@@ -1,0 +1,14 @@
+{% extends 'facteuraccordeur.html.twig' %}
+{% block stylesheets %}<link href="{{ asset('facteuraccordeur/css/styleerror.css') }}" rel="stylesheet" />{% endblock %}
+
+{% block body %}
+
+    <div class="mainerror">
+        <img class="telephonecontact" src="{{ asset('facteuraccordeur/images/error.png') }}" alt="#">
+        <p class="numero">
+            Vous ne pouvez pas supprimer un élément contenu dans la liste de la sélection.<br>
+            Vous devez au préalable supprimer la sélection.
+        </p>
+    </div>
+
+{% endblock %}

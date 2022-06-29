@@ -42,7 +42,7 @@ class ProduitRepository extends ServiceEntityRepository
     public function pianodroit()
     {
         return $this->createQueryBuilder('p')
-            ->Where('p.type = 2')
+            ->andWhere('p.type = 2')
             ->getQuery()
             ->getResult()
         ;
@@ -51,7 +51,7 @@ class ProduitRepository extends ServiceEntityRepository
     public function pianoaqueue()
     {
         return $this->createQueryBuilder('p')
-            ->Where('p.type = 1')
+            ->andWhere('p.type = 1')
             ->getQuery()
             ->getResult()
         ;

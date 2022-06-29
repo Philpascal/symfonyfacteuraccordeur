@@ -1,0 +1,22 @@
+.cont_site{
+	display: flex;
+	flex-direction: column;
+    align-items:center;
+    margin: 0 10vw 0 10vw;
+}
+
+.mainerror{
+    margin-top: 24vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mainerror img{
+    width: 30vw;
+}
+
+.mainerror p{
+    font-size: 1.8rem;
+    margin-left: 6vw;
+}
