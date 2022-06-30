@@ -57,7 +57,7 @@ class ProduitRepository extends ServiceEntityRepository
         ;
     }
 
-    public function findPrixBySearch(string $query)
+    public function findPrixBySearch(int $query)
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.prix < :query')
