@@ -38,8 +38,6 @@
                     <td>{{ produit.type }}</td>
                     <td>{{ produit.ref }}</td>
                     <td>{{ produit.prix }}</td>
-                    {# <td>{{ dump(produit.magasins) }}</td>
-                    {# une deuxième boucle car 2 id ds la même entity  #}
                     <td>
                     {% for magasin in produit.magasins %}
                         {{ magasin.nom }} <br> {{ magasin.numero }} {{ magasin.voie }} <br> {{ magasin.codepostal }} {{ magasin.ville }}

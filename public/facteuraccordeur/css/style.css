@@ -153,7 +153,8 @@ body{
 }
 
 .logo{
-	margin-bottom: 10px;
+	margin-bottom: 26px;
+	margin-top: 4px;
 	margin-right: 4vw;
 	height: 28px;
 }
@@ -351,7 +352,7 @@ footer{
 }
 
 .arobase{
-	width: 36px;
+	width: 34px;
 }
 
 .arobase:hover{
@@ -423,8 +424,9 @@ footer{
 	}
 
 	.logo{
-		margin-top: -6px;
-		margin-right: 8px;
+		margin-top: 8px;
+		margin-bottom: 30px;
+		/* margin-right: 10px; */
 		height: 28px;
 	}
 
@@ -543,7 +545,8 @@ footer{
 	}
 
 	.logo{
-		margin-top: -10px;
+		margin-top: -8px;
+		margin-bottom: 14px;
 		margin-right: 70px;
 		height: 28px;
 	}

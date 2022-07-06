@@ -36,9 +36,8 @@ class RegistrationFormType extends AbstractType
             ->add('tel', TextType::class, [
                 'attr' => [
                     'placeholder' => 'ex: 0611223344',
-                    //'class' => 'number',
+                    'pattern' => '{0}[0-9]{9}',
                     'maxlength' => 10,
-                    //'step' => 2,
                 ],
                 'constraints' => [
                     new Length([
