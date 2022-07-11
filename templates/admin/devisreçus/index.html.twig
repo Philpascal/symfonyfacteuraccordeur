@@ -27,6 +27,7 @@
                             <th>Nom réponse</th>
                             <th>Réponse</th>
                             <th>Date réponse</th>
+                            <th colspan="2">Action</th>
                         </tr>
                     </thead>
 
@@ -48,8 +49,8 @@
                             <td>{{ devis.userrepondre}}</td>
                             <td>{{ devis.reponse }}</td>
                             <td>{{ (devis.datereponse != null)? devis.datereponse | date:"" }}</td>
-                            <td><a class="btn btn-primary" href="{{ path('app_repondre', {id:devis.id}) }}">Repondre</td></a>
-                            <td><a class="btn btn-danger" href="#">Alerte</td></a>
+                            <td><a class="btn btn-primary" href="{{ path('app_repondre', {id:devis.id}) }}">Repondre</a></td>
+                            <td><a class="btn btn-danger" href="#">Alerte</a></td>
                         </tr> 
                         {% endfor %}
                     </tbody>

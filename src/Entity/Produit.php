@@ -35,11 +35,13 @@ class Produit
 /*************pour la collection magasin, 2 id dans l'entity, pour aller chercher l'attribut, mettre des s*/
 /******************le produit pointe vers le magasin************************************* */
     #[ORM\ManyToMany(targetEntity: Magasin::class, inversedBy: 'produits')]
-    // #[ORM\JoinColumn(nullable: false)]
     private $magasins;
 
     #[ORM\Column(type: 'integer')]
     private $prix;
+
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'produits')]
+    private $enregistrer;
 
     public function __construct()
     {
@@ -144,6 +146,18 @@ class Produit
     public function setPrix(int $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getEnregistrer(): ?User
+    {
+        return $this->enregistrer;
+    }
+
+    public function setEnregistrer(?User $enregistrer): self
+    {
+        $this->enregistrer = $enregistrer;
 
         return $this;
     }

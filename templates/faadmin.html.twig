@@ -21,7 +21,7 @@
 
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <h1 class="navbar-brand ps-3" href="#">Administration du site d'Antoine BERTHIER</h1>
+            <p class="navbar-brand ps-3">Administration du site d'Antoine BERTHIER</p>
 
             <!-- Navbar Search-->
             {# <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
@@ -81,7 +81,7 @@
                                 Gestion Page Accueil
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseLayouts"  >
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ path('app_photoaccueil_index') }}">Les images</a>
                                 </nav>
@@ -92,7 +92,7 @@
                                 Gestion des selections
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapsePages">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="{{ path('app_selection_index') }}">
                                         La liste
@@ -101,7 +101,7 @@
                                         Les données
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                                     </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <div class="collapse" id="pagesCollapseError"  data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="{{ path('app_marque_index') }}">Les marques</a>
                                             <a class="nav-link" href="{{ path('app_type_index') }}">Les formes</a>
@@ -118,7 +118,7 @@
                                 Gestion des devis
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseDevis" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <div class="collapse" id="collapseDevis"  >
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ path('app_bilandevis') }}">Bilan Devis</a>
                                     <a class="nav-link" href="{{ path('app_admin_devisre_us') }}">Devis reçus</a>

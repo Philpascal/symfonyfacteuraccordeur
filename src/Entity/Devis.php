@@ -92,16 +92,6 @@ class Devis
         $this->codepostal = $codepostal;
         return $this;
     }
-    // public function getCodepostal(): ?int
-    // {
-    //     return $this->codepostal;
-    // }
-
-    // public function setCodepostal(int $codepostal): self
-    // {
-    //     $this->codepostal = $codepostal;
-    //     return $this;
-    // }
 
     public function getVille(): ?string
     {

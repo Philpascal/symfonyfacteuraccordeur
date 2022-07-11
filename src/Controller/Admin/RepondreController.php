@@ -26,7 +26,8 @@ class RepondreController extends AbstractController
             return $this->redirectToRoute('admin_home');
         }
         
-        return $this->render('admin/repondre/index.html.twig', [ 'titrepage' => 'Réponse - Facteur Accordeur Piano',
+        return $this->render('admin/repondre/index.html.twig', [ 
+            'titrepage' => 'Réponse - Facteur Accordeur Piano',
             'form' => $form->createView(),
         ]);
     }
