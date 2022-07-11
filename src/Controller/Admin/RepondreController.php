@@ -19,10 +19,13 @@ class RepondreController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $devis->setUserrepondre($this->getUser());
             $devis->setDatereponse(new \DateTimeImmutable('now'));/***********date auto */
+
             $em = $doctrine->getManager();
             $em->flush();
+
             return $this->redirectToRoute('admin_home');
         }
         
