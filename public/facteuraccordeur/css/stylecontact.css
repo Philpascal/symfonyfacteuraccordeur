@@ -8,6 +8,7 @@
 .maincontact{
 	margin-top: 18vh;
 	margin-left: 0;
+	margin-bottom: 100px;
 }
 
 .maincontact img{
@@ -49,11 +50,6 @@
 	letter-spacing: 1px;
 	margin-top: 0vh;
 	margin-bottom: 4vh;
-}
-
-.chgtmdp{
-	margin-bottom: 4vh;
-
 }
 
 @media only screen and (min-width: 400px){

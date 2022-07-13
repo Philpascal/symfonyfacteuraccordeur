@@ -50,7 +50,7 @@
                             <td>{{ devis.reponse }}</td>
                             <td>{{ (devis.datereponse != null)? devis.datereponse | date:"" }}</td>
                             <td><a class="btn btn-primary" href="{{ path('app_repondre', {id:devis.id}) }}">Repondre</a></td>
-                            <td><a class="btn btn-danger" href="#">Alerte</a></td>
+                            <td><a class="btn btn-danger" href="#">Supprimer</a></td>
                         </tr> 
                         {% endfor %}
                     </tbody>

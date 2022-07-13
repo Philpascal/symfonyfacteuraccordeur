@@ -25,7 +25,6 @@ class PhotoaccueilType extends AbstractType
             ->add('clef')
             ->add('note')
             ->add('video')
-            // ->add('user')
         ;
     }
 

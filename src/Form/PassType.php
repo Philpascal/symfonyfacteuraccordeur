@@ -17,7 +17,7 @@ class PassType extends AbstractType
     $builder
         ->add('oldPassword', PasswordType::class, [
             'mapped' => false,
-            'label' => 'Mot de pass actuel',
+            'label' => 'Mot de passe actuel',
             'attr' => ['autocomplet' => 'email'],
             'constraints' => [
                 new NotBlank([

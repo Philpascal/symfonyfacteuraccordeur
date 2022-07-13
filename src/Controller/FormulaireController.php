@@ -35,7 +35,7 @@ class FormulaireController extends AbstractController
 
 
                 // @TODO Change the redirect on success and handle or remove the flash message in your templates
-                $this->addFlash('success', 'Le formumaire a été envoyé.');
+                $this->addFlash('success', 'Le formulaire a été envoyé.');
 
 
                 return $this->redirectToRoute('home');

@@ -29,7 +29,7 @@ class CghtpasswordController extends AbstractController
             $oldPassword = $form->get('oldPassword')->getData();
             if (!$userPasswordHasher->isPasswordValid($user, $oldPassword)) {
             //on redirige sur le même form avec un feedback
-                $this->addFlash('danger', 'Mot de pass actuel éroné !');
+                $this->addFlash('danger', 'Mot de passe actuel éroné !');
                 return $this->redirectToRoute('app_password');
             }
 
