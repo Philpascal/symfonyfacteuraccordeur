@@ -45,12 +45,12 @@ class PassType extends AbstractType
             ],
             'second_options' => [
                 'attr' => ['autocomplete' => 'new-password'],
-                'label' => 'Répéter le noveau mot de passe',
+                'label' => 'Répétez le noveau mot de passe',
             ],
             'invalid_message' => 'Vous n\'avez pas tapé 2 fois le même mot de passe',
         ])
         ->add('valider', SubmitType::class,[
-            'label' => 'Modifier',
+            'label' => 'Valider',
         ]);
     }
 }

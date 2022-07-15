@@ -29,16 +29,13 @@ class RepondreController extends AbstractController
             $email=(new TemplatedEmail())
                 ->from(new Address('philippesedlacek1@gmail.com', 'company.com'))
                 ->to($devis->getUser()->getEmail())
-                ->subject('voici la réponse')
-                ->htmlTemplate('admin/reponse.html.twig')
+                ->subject('Facteur Accordeur Antoine BERTHIER')
+                ->htmlTemplate('admin/reponseenvoyee.html.twig')
                 ->context([
                     'message'=> $devis->getMessage(),
                     'reponse'=> $devis->getReponse()
                 ]);
             $mailer->send($email);
-
-
-
 
             $em = $doctrine->getManager();
             $em->flush();
