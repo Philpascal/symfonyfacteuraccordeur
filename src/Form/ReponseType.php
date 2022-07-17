@@ -15,7 +15,7 @@ class ReponseType extends AbstractType
     {
         $builder
         ->add('reponse', TextareaType::class, [
-            "label" => "Formulaire pour répondre",
+            "label" => "Formulaire pour répondre par mail",
         ])
         ->add('Valider', SubmitType::class)
         ;

@@ -19,15 +19,11 @@ class SearchController extends AbstractController
             ->add('query',IntegerType::class, [
                 'label' => false,
                 'attr' => [
-                    //'class' => 'form-control',
                     'placeholder' => 'Prix maxi d\'un Piano',
                     'min' => 0,
                 ]
             ])
             ->add('recherche', SubmitType::class, [
-                // 'attr' => [
-                //     'class' => 'btn btn-primary btn-sm'
-                //     ]
             ])
             ->getForm();
         
